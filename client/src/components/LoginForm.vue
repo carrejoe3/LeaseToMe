@@ -27,11 +27,13 @@ export default {
     password: null
   }),
   methods: {
-    login () {
-      authentication.login({
+    async login () {
+      const response = await authentication.login({
         username: this.username,
         password: this.password
       })
+
+      console.log(response)
     }
   }
 }
