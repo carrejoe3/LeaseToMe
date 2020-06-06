@@ -24,6 +24,7 @@ export default {
           break
         case 'signOut':
           this.$store.commit('setState', { property: 'userId', value: null })
+          this.$router.push('/')
           break
         default:
           break

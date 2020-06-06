@@ -2,9 +2,8 @@
   <v-app-bar app hide-on-scroll height="30px" flat class="greenish">
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn x-small text><h6>Login</h6></v-btn>
-      <v-btn x-small text><h6>Register</h6></v-btn>
-      <v-btn x-small text color="white" @click="signOut">Sign Out</v-btn>
+      <v-btn x-small text v-if="!loggedIn" to="/"><h6>Login/ Register</h6></v-btn>
+      <v-btn x-small text color="white" @click="signOut" v-if="loggedIn">Sign Out</v-btn>
     </v-toolbar-items>
   </v-app-bar>
 </template>
@@ -17,6 +16,11 @@ export default {
   name: 'AccountNavBar',
   props: {
     msg: String
+  },
+  computed: {
+    loggedIn () {
+      return this.$store.state.userId !== null
+    }
   },
   methods: {
     async signOut () {
