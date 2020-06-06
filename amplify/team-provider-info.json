@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-leasetome-dev-124638-authRole",
+            "UnauthRoleArn": "arn:aws:iam::688410403602:role/amplify-leasetome-dev-124638-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::688410403602:role/amplify-leasetome-dev-124638-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-leasetome-dev-124638-deployment",
+            "UnauthRoleName": "amplify-leasetome-dev-124638-unauthRole",
+            "StackName": "amplify-leasetome-dev-124638",
+            "StackId": "arn:aws:cloudformation:us-east-1:688410403602:stack/amplify-leasetome-dev-124638/6e87d410-a7eb-11ea-ae4f-0e794c84352f",
+            "AmplifyAppId": "d3jscdgbjok2d2"
+        }
+    }
+}
