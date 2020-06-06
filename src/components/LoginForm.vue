@@ -1,7 +1,5 @@
 <template>
-  <amplify-authenticator>
-    <amplify-sign-out></amplify-sign-out>
-  </amplify-authenticator>
+  <amplify-authenticator></amplify-authenticator>
 </template>
 
 <script>

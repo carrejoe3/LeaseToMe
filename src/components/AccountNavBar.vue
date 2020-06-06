@@ -4,17 +4,31 @@
     <v-toolbar-items>
       <v-btn x-small text><h6>Login</h6></v-btn>
       <v-btn x-small text><h6>Register</h6></v-btn>
+      <v-btn x-small text color="white" @click="signOut">Sign Out</v-btn>
     </v-toolbar-items>
   </v-app-bar>
 </template>
 
 <script>
+
+import { Auth } from 'aws-amplify'
+
 export default {
   name: 'AccountNavBar',
   props: {
     msg: String
+  },
+  methods: {
+    async signOut () {
+      try {
+        await Auth.signOut()
+      } catch (error) {
+        console.error('error signing out: ', error)
+      }
+    }
   }
 }
+
 </script>
 
 <style scoped>
