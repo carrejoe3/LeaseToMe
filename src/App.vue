@@ -20,6 +20,7 @@ export default {
       switch (payload.event) {
         case 'signIn':
           this.$store.commit('setState', { property: 'userId', value: payload.data.username })
+          this.$router.push('Dashboard')
           break
         case 'signOut':
           this.$store.commit('setState', { property: 'userId', value: null })
