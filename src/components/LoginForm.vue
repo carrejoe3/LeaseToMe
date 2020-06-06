@@ -5,13 +5,7 @@
 <script>
 
 export default {
-  name: 'LoginForm',
-  data: () => ({
-    username: null,
-    password: null
-  }),
-  methods: {},
-  mounted () {}
+  name: 'LoginForm'
 }
 
 </script>
