@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "leasetome",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authleasetome25b3deff",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

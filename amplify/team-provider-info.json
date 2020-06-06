@@ -10,6 +10,11 @@
             "StackName": "amplify-leasetome-dev-124638",
             "StackId": "arn:aws:cloudformation:us-east-1:688410403602:stack/amplify-leasetome-dev-124638/6e87d410-a7eb-11ea-ae4f-0e794c84352f",
             "AmplifyAppId": "d3jscdgbjok2d2"
+        },
+        "categories": {
+            "auth": {
+                "leasetome25b3deff": {}
+            }
         }
     }
 }
