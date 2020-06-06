@@ -82,10 +82,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 /* Font Colors */
   .darkGreen {
-    color: #2A572E;
+    color: $darkGreen;
   }
 
   .middleGreen {
