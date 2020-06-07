@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { API, graphqlOperation } from 'aws-amplify'
+import * as queries from '../graphql/queries'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    userId: null
+    userId: null,
+    notifications: []
   },
   mutations: {
     setState (state, payload) {
@@ -13,6 +16,14 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async getNotifications ({ commit }) {
+      try {
+        const notifications = await API.graphql(graphqlOperation(queries.listNotifications))
+        commit('setState', { property: 'notifications', value: notifications.data.listNotifications.items })
+      } catch (err) {
+        console.error(err)
+      }
+    }
   },
   modules: {
   }

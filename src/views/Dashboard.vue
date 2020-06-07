@@ -7,8 +7,17 @@
 <script>
 
 export default {
-  name: 'Dashboard'
+  name: 'Dashboard',
+  methods: {
+    getNofications () {
+      this.$store.dispatch('getNotifications')
+    }
+  },
+  mounted () {
+    this.getNofications()
+  }
 }
+
 </script>
 
 <style scoped>
