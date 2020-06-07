@@ -16,9 +16,15 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async getNotifications ({ commit }) {
+    async getNotifications ({ commit, state }) {
       try {
-        const notifications = await API.graphql(graphqlOperation(queries.listNotifications))
+        const notifications = await API.graphql(graphqlOperation(queries.listNotifications, {
+          filter: {
+            userId: {
+              eq: state.userId
+            }
+          }
+        }))
         commit('setState', { property: 'notifications', value: notifications.data.listNotifications.items })
       } catch (err) {
         console.error(err)
