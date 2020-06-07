@@ -301,3 +301,120 @@ export const deleteNotification = /* GraphQL */ `
     }
   }
 `;
+export const createProperty = /* GraphQL */ `
+  mutation CreateProperty(
+    $input: CreatePropertyInput!
+    $condition: ModelPropertyConditionInput
+  ) {
+    createProperty(input: $input, condition: $condition) {
+      id
+      ownerId
+      address
+      description
+      images {
+        items {
+          id
+          propertyID
+          imageData
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateProperty = /* GraphQL */ `
+  mutation UpdateProperty(
+    $input: UpdatePropertyInput!
+    $condition: ModelPropertyConditionInput
+  ) {
+    updateProperty(input: $input, condition: $condition) {
+      id
+      ownerId
+      address
+      description
+      images {
+        items {
+          id
+          propertyID
+          imageData
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteProperty = /* GraphQL */ `
+  mutation DeleteProperty(
+    $input: DeletePropertyInput!
+    $condition: ModelPropertyConditionInput
+  ) {
+    deleteProperty(input: $input, condition: $condition) {
+      id
+      ownerId
+      address
+      description
+      images {
+        items {
+          id
+          propertyID
+          imageData
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createPropertyImage = /* GraphQL */ `
+  mutation CreatePropertyImage(
+    $input: CreatePropertyImageInput!
+    $condition: ModelPropertyImageConditionInput
+  ) {
+    createPropertyImage(input: $input, condition: $condition) {
+      id
+      propertyID
+      imageData
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updatePropertyImage = /* GraphQL */ `
+  mutation UpdatePropertyImage(
+    $input: UpdatePropertyImageInput!
+    $condition: ModelPropertyImageConditionInput
+  ) {
+    updatePropertyImage(input: $input, condition: $condition) {
+      id
+      propertyID
+      imageData
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deletePropertyImage = /* GraphQL */ `
+  mutation DeletePropertyImage(
+    $input: DeletePropertyImageInput!
+    $condition: ModelPropertyImageConditionInput
+  ) {
+    deletePropertyImage(input: $input, condition: $condition) {
+      id
+      propertyID
+      imageData
+      createdAt
+      updatedAt
+    }
+  }
+`;

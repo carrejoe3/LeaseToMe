@@ -179,3 +179,76 @@ export const listNotifications = /* GraphQL */ `
     }
   }
 `;
+export const getProperty = /* GraphQL */ `
+  query GetProperty($id: ID!) {
+    getProperty(id: $id) {
+      id
+      ownerId
+      address
+      description
+      images {
+        items {
+          id
+          propertyID
+          imageData
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listPropertys = /* GraphQL */ `
+  query ListPropertys(
+    $filter: ModelPropertyFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPropertys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        ownerId
+        address
+        description
+        images {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getPropertyImage = /* GraphQL */ `
+  query GetPropertyImage($id: ID!) {
+    getPropertyImage(id: $id) {
+      id
+      propertyID
+      imageData
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listPropertyImages = /* GraphQL */ `
+  query ListPropertyImages(
+    $filter: ModelPropertyImageFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPropertyImages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        propertyID
+        imageData
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

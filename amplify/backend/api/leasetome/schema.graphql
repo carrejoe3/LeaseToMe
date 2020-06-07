@@ -24,3 +24,18 @@ type Notification @model {
   userId: ID!
   body: String!
 }
+
+type Property @model {
+  id: ID!
+  ownerId: ID!
+  address: String!
+  description: String!
+  images: [PropertyImage] @connection(keyName: "byProperty", fields: ["id"])
+}
+
+type PropertyImage @model @key(name: "byProperty", fields: ["propertyID"]) {
+  id: ID!
+  propertyID: ID!
+  imageData: String!
+}
+

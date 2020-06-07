@@ -265,3 +265,102 @@ export const onDeleteNotification = /* GraphQL */ `
     }
   }
 `;
+export const onCreateProperty = /* GraphQL */ `
+  subscription OnCreateProperty {
+    onCreateProperty {
+      id
+      ownerId
+      address
+      description
+      images {
+        items {
+          id
+          propertyID
+          imageData
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateProperty = /* GraphQL */ `
+  subscription OnUpdateProperty {
+    onUpdateProperty {
+      id
+      ownerId
+      address
+      description
+      images {
+        items {
+          id
+          propertyID
+          imageData
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteProperty = /* GraphQL */ `
+  subscription OnDeleteProperty {
+    onDeleteProperty {
+      id
+      ownerId
+      address
+      description
+      images {
+        items {
+          id
+          propertyID
+          imageData
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreatePropertyImage = /* GraphQL */ `
+  subscription OnCreatePropertyImage {
+    onCreatePropertyImage {
+      id
+      propertyID
+      imageData
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdatePropertyImage = /* GraphQL */ `
+  subscription OnUpdatePropertyImage {
+    onUpdatePropertyImage {
+      id
+      propertyID
+      imageData
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePropertyImage = /* GraphQL */ `
+  subscription OnDeletePropertyImage {
+    onDeletePropertyImage {
+      id
+      propertyID
+      imageData
+      createdAt
+      updatedAt
+    }
+  }
+`;
