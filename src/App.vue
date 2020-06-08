@@ -9,7 +9,7 @@
 
 <script>
 
-import { Hub } from 'aws-amplify'
+import { Hub, Auth } from 'aws-amplify'
 import AccountNavBar from '@/components/AccountNavBar.vue'
 
 export default {
@@ -19,16 +19,23 @@ export default {
     onAuthEvent (payload) {
       switch (payload.event) {
         case 'signIn':
-          this.$store.commit('setState', { property: 'userId', value: payload.data.username })
+          this.getUser()
           this.$router.push('Dashboard')
           break
         case 'signOut':
-          this.$store.commit('setState', { property: 'userId', value: null })
+          this.$store.commit('setState', { property: 'user', value: null })
           this.$router.push('/')
           break
         default:
           break
       }
+    },
+    getUser () {
+      Auth.currentAuthenticatedUser()
+        .then(user => {
+          this.$store.commit('setState', { property: 'user', value: user })
+        })
+        .catch(() => console.log('User is not signed in'))
     }
   },
   mounted () {

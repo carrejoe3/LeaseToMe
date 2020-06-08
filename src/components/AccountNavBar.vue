@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     loggedIn () {
-      return this.$store.state.userId !== null
+      return this.$store.state.user !== null
     }
   },
   methods: {
