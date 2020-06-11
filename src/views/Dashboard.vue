@@ -8,13 +8,19 @@
 
 export default {
   name: 'Dashboard',
-  methods: {
-    getNofications () {
-      this.$store.dispatch('getNotifications')
+  computed: {
+    user () {
+      return this.$store.state.user
     }
   },
+  watch: {
+    user () {
+      if (this.user !== null) this.$store.dispatch('getNotifications')
+    }
+  },
+  methods: {
+  },
   mounted () {
-    this.getNofications()
   }
 }
 

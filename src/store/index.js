@@ -21,7 +21,7 @@ export default new Vuex.Store({
         const notifications = await API.graphql(graphqlOperation(queries.listNotifications, {
           filter: {
             userId: {
-              eq: state.userId
+              eq: state.user.username
             }
           }
         }))
