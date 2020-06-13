@@ -47,6 +47,15 @@
             required
             :rules="[() => !!form.email || 'This field is required']"
           ></v-text-field>
+          <v-overflow-btn
+            class="my-2"
+            prepend-icon="mdi-account-details"
+            :items="clientType"
+            label="Account Type"
+            target="#accountTypeDropdown"
+            v-model="accountType"
+            :rules="[() => !!form.accountType || 'This field is required']"
+          ></v-overflow-btn>
         </v-form>
       </v-card-text>
       <v-card-actions>
@@ -90,8 +99,14 @@ export default {
         username: '',
         password: '',
         email: '',
-        phone: ''
-      }
+        phone: '',
+        accountType: ''
+      },
+      clientType: [
+        'Tenant',
+        'Landlord',
+        'Broker'
+      ]
     }
   },
   computed: {
