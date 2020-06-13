@@ -2,7 +2,7 @@
   <v-container class="fill-height" fluid>
     <v-row align="center" justify="center">
       <v-col cols="12">
-        <SignUp v-if="loginFormState === 'signUp'" />
+        <SignUp v-if="loginFormState === 'signUp' || loginFormState === 'confirmSignUp'" />
         <SignIn v-else-if="loginFormState === 'signIn'" />
       </v-col>
     </v-row>

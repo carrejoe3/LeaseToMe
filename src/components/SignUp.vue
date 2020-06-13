@@ -9,6 +9,7 @@
           <v-text-field id="username" label="Username" name="username" prepend-icon="mdi-account" type="text" v-model="form.username"></v-text-field>
           <v-text-field id="password" label="Password" name="password" prepend-icon="mdi-lock" type="password" v-model="form.password"></v-text-field>
           <v-text-field id="email" label="Email" name="password" prepend-icon="mdi-email" type="email" v-model="form.email"></v-text-field>
+          <v-text-field id="phone" label="Phone" name="phone" prepend-icon="mdi-phone" type="tel" v-model="form.phone" prefix="+1"></v-text-field>
         </v-form>
       </v-card-text>
       <v-card-actions>
@@ -19,7 +20,7 @@
         <v-btn color="primary" @click='signUp'>Sign Up</v-btn>
       </v-card-actions>
     </v-card>
-    <v-card class="elevation-12" v-if="loginFormState === 'confirmSignUp'">
+    <v-card class="elevation-12" v-else-if="loginFormState === 'confirmSignUp'">
       <v-toolbar color="primary" dark flat>
         <v-toolbar-title>Confirm Sign Up</v-toolbar-title>
       </v-toolbar>
@@ -48,7 +49,8 @@ export default {
       form: {
         username: '',
         password: '',
-        email: ''
+        email: '',
+        phone: ''
       }
     }
   },
@@ -64,9 +66,14 @@ export default {
   },
   methods: {
     async signUp () {
-      const { username, password, email } = this.form
+      const { username, password, email, phone } = this.form
       await Auth.signUp({
-        username, password, attributes: { email }
+        username,
+        password,
+        attributes: {
+          email,
+          phone_number: '+1' + phone
+        }
       })
       this.loginFormState = 'confirmSignUp'
     },
