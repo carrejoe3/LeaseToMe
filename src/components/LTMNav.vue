@@ -1,6 +1,9 @@
 <template>
   <header>
-  <v-toolbar>
+  <v-toolbar
+  absolute
+  width="100vw"
+  >
     <v-toolbar-title class="titleGreen">
       <v-icon id="icon" large color="green darken-2">mdi-domain</v-icon>
       <h3><strong>LeaseToMe</strong></h3>

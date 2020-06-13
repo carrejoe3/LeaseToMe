@@ -8,7 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: null,
-    notifications: []
+    notifications: ['hello1', 'hello2']
   },
   mutations: {
     setState (state, payload) {
@@ -21,7 +21,7 @@ export default new Vuex.Store({
         const notifications = await API.graphql(graphqlOperation(queries.listNotifications, {
           filter: {
             userId: {
-              eq: state.userId
+              eq: state.user.username
             }
           }
         }))
