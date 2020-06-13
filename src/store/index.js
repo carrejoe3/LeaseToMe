@@ -8,7 +8,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: null,
-    notifications: ['hello1', 'hello2']
+    notifications: ['hello1', 'hello2'],
+    loginFormState: 'signIn'
   },
   mutations: {
     setState (state, payload) {
