@@ -132,7 +132,12 @@ export default {
     },
     async confirmSignUp () {
       const { email, authCode } = this.form
-      await Auth.confirmSignUp(email, authCode)
+      try {
+        await Auth.confirmSignUp(email, authCode)
+        this.loginFormState = 'signIn'
+      } catch (err) {
+        console.error(err)
+      }
     }
   }
 }

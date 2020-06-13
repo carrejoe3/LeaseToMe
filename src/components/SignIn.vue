@@ -4,23 +4,35 @@
       <v-toolbar-title>Login</v-toolbar-title>
     </v-toolbar>
     <v-card-text>
-      <v-form>
-        <v-text-field label="Username" name="username" prepend-icon="mdi-email" type="text" v-model="form.username"></v-text-field>
-        <v-text-field id="password" label="Password" name="password" prepend-icon="mdi-lock" type="password" v-model="form.password"></v-text-field>
+      <v-form v-model="valid">
+        <v-text-field
+          label="Email"
+          name="email"
+          prepend-icon="mdi-email"
+          type="text"
+          v-model="form.email"
+          :rules="emailRules"
+        ></v-text-field>
+        <v-text-field
+          id="password"
+          label="Password"
+          name="password"
+          prepend-icon="mdi-lock"
+          type="password"
+          v-model="form.password"
+          :rules="[() => !!form.password || 'This field is required']"
+        ></v-text-field>
       </v-form>
     </v-card-text>
     <v-card-actions>
-      <span @click="loginFormState = 'signUp'" class="ml-3">
-        Need an account? Sign Up
-      </span>
+      <span @click="loginFormState = 'signUp'" class="ml-3">Need an account? Sign Up</span>
       <v-spacer></v-spacer>
-      <v-btn color="primary" @click="signIn">Login</v-btn>
+      <v-btn color="primary" @click="signIn" :disabled="!valid">Login</v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
-
 import { Auth } from 'aws-amplify'
 
 export default {
@@ -28,9 +40,14 @@ export default {
   data () {
     return {
       form: {
-        username: '',
+        email: '',
         password: ''
-      }
+      },
+      valid: false,
+      emailRules: [
+        (v) => !!v || 'E-mail is required',
+        (v) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+      ]
     }
   },
   computed: {
@@ -39,15 +56,17 @@ export default {
         return this.$store.state.loginFormState
       },
       set (value) {
-        this.$store.commit('setState', { property: 'loginFormState', value: value })
+        this.$store.commit('setState', {
+          property: 'loginFormState',
+          value: value
+        })
       }
     }
   },
   methods: {
     async signIn () {
-      await Auth.signIn(this.form.username, this.form.password)
+      await Auth.signIn(this.form.email, this.form.password)
     }
   }
 }
-
 </script>
