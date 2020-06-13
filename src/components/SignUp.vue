@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="elevation-12" v-if="formState === 'signUp'">
+    <v-card class="elevation-12" v-if="loginFormState === 'signUp'">
       <v-toolbar color="primary" dark flat>
         <v-toolbar-title>Register</v-toolbar-title>
       </v-toolbar>
@@ -12,11 +12,14 @@
         </v-form>
       </v-card-text>
       <v-card-actions>
+        <span @click="loginFormState = 'signIn'" class="ml-3">
+          Already sign up? Sign In
+        </span>
         <v-spacer></v-spacer>
         <v-btn color="primary" @click='signUp'>Sign Up</v-btn>
       </v-card-actions>
     </v-card>
-    <v-card class="elevation-12" v-if="formState === 'confirmSignUp'">
+    <v-card class="elevation-12" v-if="loginFormState === 'confirmSignUp'">
       <v-toolbar color="primary" dark flat>
         <v-toolbar-title>Confirm Sign Up</v-toolbar-title>
       </v-toolbar>
@@ -42,11 +45,20 @@ export default {
   props: ['toggle'],
   data () {
     return {
-      formState: 'signUp',
       form: {
         username: '',
         password: '',
         email: ''
+      }
+    }
+  },
+  computed: {
+    loginFormState: {
+      get () {
+        return this.$store.state.loginFormState
+      },
+      set (value) {
+        this.$store.commit('setState', { property: 'loginFormState', value: value })
       }
     }
   },
@@ -56,7 +68,7 @@ export default {
       await Auth.signUp({
         username, password, attributes: { email }
       })
-      this.formState = 'confirmSignUp'
+      this.loginFormState = 'confirmSignUp'
     },
     async confirmSignUp () {
       const { username, authCode } = this.form

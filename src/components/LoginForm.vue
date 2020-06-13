@@ -1,12 +1,9 @@
 <template>
   <v-container class="fill-height" fluid>
     <v-row align="center" justify="center">
-      <v-col cols="12" sm="8" md="4">
-        <SignUp :toggle='toggle' v-if="formState === 'signUp'" />
-        <SignIn v-if="formState === 'signIn'" />
-        <p v-on:click="toggle">
-          {{ formState === 'signUp' ? 'Already sign up? Sign In' : 'Need an account? Sign Up' }}
-        </p>
+      <v-col cols="12">
+        <SignUp v-if="loginFormState === 'signUp'" />
+        <SignIn v-else-if="loginFormState === 'signIn'" />
       </v-col>
     </v-row>
   </v-container>
@@ -23,14 +20,9 @@ export default {
     SignUp,
     SignIn
   },
-  data () {
-    return {
-      formState: 'signIn'
-    }
-  },
-  methods: {
-    toggle () {
-      this.formState === 'signUp' ? this.formState = 'signIn' : this.formState = 'signUp'
+  computed: {
+    loginFormState () {
+      return this.$store.state.loginFormState
     }
   }
 }

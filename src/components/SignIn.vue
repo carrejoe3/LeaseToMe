@@ -10,6 +10,9 @@
       </v-form>
     </v-card-text>
     <v-card-actions>
+      <span @click="loginFormState = 'signUp'" class="ml-3">
+        Need an account? Sign Up
+      </span>
       <v-spacer></v-spacer>
       <v-btn color="primary" @click="signIn">Login</v-btn>
     </v-card-actions>
@@ -27,6 +30,16 @@ export default {
       form: {
         username: '',
         password: ''
+      }
+    }
+  },
+  computed: {
+    loginFormState: {
+      get () {
+        return this.$store.state.loginFormState
+      },
+      set (value) {
+        this.$store.commit('setState', { property: 'loginFormState', value: value })
       }
     }
   },
