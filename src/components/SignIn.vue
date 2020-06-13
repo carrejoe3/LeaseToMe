@@ -5,7 +5,7 @@
     </v-toolbar>
     <v-card-text>
       <v-form>
-        <v-text-field label="Username" name="username" prepend-icon="mdi-account" type="text" v-model="form.username"></v-text-field>
+        <v-text-field label="Username" name="username" prepend-icon="mdi-email" type="text" v-model="form.username"></v-text-field>
         <v-text-field id="password" label="Password" name="password" prepend-icon="mdi-lock" type="password" v-model="form.password"></v-text-field>
       </v-form>
     </v-card-text>

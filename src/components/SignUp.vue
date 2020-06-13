@@ -5,16 +5,16 @@
         <v-toolbar-title>Register</v-toolbar-title>
       </v-toolbar>
       <v-card-text>
-        <v-form>
+        <v-form v-model="valid">
           <v-text-field
-            id="username"
-            label="Username"
-            name="username"
-            prepend-icon="mdi-account"
-            type="text"
+            id="email"
+            label="Email"
+            name="password"
+            prepend-icon="mdi-email"
+            type="email"
+            v-model="form.email"
             required
-            v-model="form.username"
-            :rules="[() => !!form.username || 'This field is required']"
+            :rules="emailRules"
           ></v-text-field>
           <v-text-field
             id="password"
@@ -25,16 +25,6 @@
             required
             v-model="form.password"
             :rules="[() => !!form.password || 'This field is required']"
-          ></v-text-field>
-          <v-text-field
-            id="email"
-            label="Email"
-            name="password"
-            prepend-icon="mdi-email"
-            type="email"
-            v-model="form.email"
-            required
-            :rules="[() => !!form.email || 'This field is required']"
           ></v-text-field>
           <v-text-field
             id="phone"
@@ -61,7 +51,7 @@
       <v-card-actions>
         <span @click="loginFormState = 'signIn'" class="ml-3">Already sign up? Sign In</span>
         <v-spacer></v-spacer>
-        <v-btn color="primary" @click="signUp">Sign Up</v-btn>
+        <v-btn :disabled="!valid" color="primary" @click="signUp">Sign Up</v-btn>
       </v-card-actions>
     </v-card>
     <v-card class="elevation-12" v-else-if="loginFormState === 'confirmSignUp'">
@@ -94,6 +84,7 @@ export default {
   name: 'home',
   data () {
     return {
+      valid: false,
       form: {
         username: '',
         password: '',
@@ -105,6 +96,10 @@ export default {
         'Tenant',
         'Landlord',
         'Broker'
+      ],
+      emailRules: [
+        (v) => !!v || 'E-mail is required',
+        (v) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
       ]
     }
   },
@@ -123,9 +118,9 @@ export default {
   },
   methods: {
     async signUp () {
-      const { username, password, email, phone, accountType } = this.form
+      const { password, email, phone, accountType } = this.form
       await Auth.signUp({
-        username,
+        username: email,
         password,
         attributes: {
           email,
@@ -136,8 +131,8 @@ export default {
       this.loginFormState = 'confirmSignUp'
     },
     async confirmSignUp () {
-      const { username, authCode } = this.form
-      await Auth.confirmSignUp(username, authCode)
+      const { email, authCode } = this.form
+      await Auth.confirmSignUp(email, authCode)
     }
   }
 }
