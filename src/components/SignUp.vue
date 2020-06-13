@@ -53,7 +53,7 @@
             :items="clientType"
             label="Account Type"
             target="#accountTypeDropdown"
-            v-model="accountType"
+            v-model="form.accountType"
             :rules="[() => !!form.accountType || 'This field is required']"
           ></v-overflow-btn>
         </v-form>
@@ -92,7 +92,6 @@ import { Auth } from 'aws-amplify'
 
 export default {
   name: 'home',
-  props: ['toggle'],
   data () {
     return {
       form: {
@@ -124,13 +123,14 @@ export default {
   },
   methods: {
     async signUp () {
-      const { username, password, email, phone } = this.form
+      const { username, password, email, phone, accountType } = this.form
       await Auth.signUp({
         username,
         password,
         attributes: {
           email,
-          phone_number: '+1' + phone
+          phone_number: '+1' + phone,
+          'custom:ClientType': accountType
         }
       })
       this.loginFormState = 'confirmSignUp'
@@ -138,7 +138,6 @@ export default {
     async confirmSignUp () {
       const { username, authCode } = this.form
       await Auth.confirmSignUp(username, authCode)
-      this.toggle()
     }
   }
 }
