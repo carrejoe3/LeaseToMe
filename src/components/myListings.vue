@@ -1,10 +1,6 @@
 <template>
   <v-container>
-    <v-card
-      class="background d-flex flex-column flex-wrap justify-center"
-      height="20vw"
-      width="25vw"
-    >
+    <v-card class="background d-flex flex-column flex-wrap justify-center" height="20vw" width="25vw">
       <v-icon id="icon" x-large color="green darken-2">mdi-domain</v-icon>
       <v-card-title class="mx-auto">
         <h1>My Listings</h1>
