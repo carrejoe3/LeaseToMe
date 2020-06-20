@@ -1,6 +1,7 @@
 <template>
   <v-content class="home">
     <MainNavbar />
+    <Footer />
   </v-content>
 </template>
 
@@ -8,11 +9,13 @@
 
 // @ is an alias to /src
 import MainNavbar from '@/components/MainNavbar.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
-    MainNavbar
+    MainNavbar,
+    Footer
   }
 }
 
