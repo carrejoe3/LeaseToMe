@@ -15,6 +15,7 @@
             v-model="form.email"
             required
             :rules="emailRules"
+            autocomplete="email"
           ></v-text-field>
           <v-text-field
             id="password"
@@ -25,6 +26,7 @@
             required
             v-model="form.password"
             :rules="[() => !!form.password || 'This field is required']"
+            autocomplete="current-password"
           ></v-text-field>
           <v-text-field
             id="phone"
@@ -36,6 +38,7 @@
             prefix="+1"
             required
             :rules="[() => !!form.email || 'This field is required']"
+            autocomplete="phone"
           ></v-text-field>
           <v-overflow-btn
             class="my-2"
@@ -45,6 +48,7 @@
             target="#accountTypeDropdown"
             v-model="form.accountType"
             :rules="[() => !!form.accountType || 'This field is required']"
+            autocomplete="account-type"
           ></v-overflow-btn>
         </v-form>
       </v-card-text>
