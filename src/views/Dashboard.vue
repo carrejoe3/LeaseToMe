@@ -20,11 +20,11 @@
 
 <script>
 
-import MainNavbar from '@/components/MainNavbar.vue'
-import notifications from '@/components/notifications.vue'
-import dashboardMenu from '@/components/dashboardMenu.vue'
-import myListings from '@/components/myListings.vue'
-import dashPostListing from '@/components/dashPostListing.vue'
+import MainNavbar from '@/components/navbars/MainNavbar'
+import notifications from '@/components/dashboard/notifications'
+import dashboardMenu from '@/components/dashboard/dashboardMenu'
+import myListings from '@/components/dashboard/myListings'
+import dashPostListing from '@/components/dashboard/dashPostListing'
 
 export default {
   name: 'Dashboard',

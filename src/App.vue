@@ -10,7 +10,7 @@
 <script>
 
 import { Hub, Auth } from 'aws-amplify'
-import AccountNavBar from '@/components/AccountNavBar.vue'
+import AccountNavBar from '@/components/navbars/AccountNavBar.vue'
 
 export default {
   name: 'App',

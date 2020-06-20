@@ -9,9 +9,9 @@
 <script>
 
 // @ is an alias to /src
-import MainNavbar from '@/components/MainNavbar.vue'
-import Footer from '@/components/footer/Footer.vue'
-import FooterBar from '@/components/footer/FooterBar.vue'
+import MainNavbar from '@/components/navbars/MainNavbar'
+import Footer from '@/components/footer/Footer'
+import FooterBar from '@/components/footer/FooterBar'
 
 export default {
   name: 'Home',

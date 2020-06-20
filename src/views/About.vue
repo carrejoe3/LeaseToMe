@@ -8,8 +8,8 @@
 <script>
 
 // @ is an alias to /src
-import MainNavbar from '@/components/MainNavbar.vue'
-import AboutContent from '@/components/AboutContent.vue'
+import MainNavbar from '@/components/navbars/MainNavbar'
+import AboutContent from '@/components/about/AboutContent'
 
 export default {
   name: 'About',
