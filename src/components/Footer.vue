@@ -2,8 +2,8 @@
   <v-container id="footerWrapper" fluid>
     <v-container id="footer">
       <v-row>
-        <v-col>
-          <v-list>
+        <v-col xs="12" sm="6" md="3" lg="4">
+          <v-list color="darkGreen" dark>
             <v-list-item three-line>
               <v-list-item-content>
                 <v-list-item-title>CONTACT US</v-list-item-title>
@@ -12,26 +12,26 @@
               </v-list-item-content>
             </v-list-item>
           </v-list>
-          <v-list-item single-line>
+          <v-list-item single-line dark>
               <v-list-item-title>CONNECT WITH US</v-list-item-title>
           </v-list-item>
           <div id="socialMediaIcons" class="d-flex pl-2">
-            <v-btn icon>
+            <v-btn icon color="accent">
               <v-icon>mdi-linkedin</v-icon>
             </v-btn>
-            <v-btn icon>
+            <v-btn icon color="accent">
               <v-icon>mdi-facebook</v-icon>
             </v-btn>
-            <v-btn icon>
+            <v-btn icon color="accent">
               <v-icon>mdi-instagram</v-icon>
             </v-btn>
-            <v-btn icon>
+            <v-btn icon color="accent">
               <v-icon>mdi-twitter</v-icon>
             </v-btn>
           </div>
         </v-col>
-        <v-col>
-          <v-list>
+        <v-col xs="6" sm="4" md="2" lg="2">
+          <v-list color="darkGreen" dark>
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title>TENANTS</v-list-item-title>
@@ -45,8 +45,8 @@
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col>
-          <v-list>
+        <v-col xs="6" sm="4" md="2" lg="2">
+          <v-list color="darkGreen" dark>
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title>LANDLORDS</v-list-item-title>
@@ -59,8 +59,8 @@
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col>
-          <v-list>
+        <v-col xs="6" sm="4" md="2" lg="2">
+          <v-list color="darkGreen" dark>
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title>BROKERS</v-list-item-title>
@@ -75,8 +75,8 @@
             </v-list-item>
           </v-list>
         </v-col>
-        <v-col>
-          <v-list>
+        <v-col xs="6" sm="4" md="2" lg="2">
+          <v-list color="darkGreen" dark>
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title>COMPANY</v-list-item-title>
@@ -95,8 +95,6 @@
 
 <script>
 
-// @ is an alias to /src
-
 export default {
   name: 'Footer'
 }
@@ -107,7 +105,6 @@ export default {
 #footerWrapper {
   #footer {
     background-color: $darkGreen;
-    color: $accent;
   }
 }
 </style>

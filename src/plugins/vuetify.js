@@ -10,7 +10,8 @@ export default new Vuetify({
         primary: '#406B44',
         secondary: '#C6E1D7',
         mainGreen: '#02883f',
-        accent: '#8c9eff',
+        darkGreen: '#2A572E',
+        accent: '#ffffff',
         error: '#b71c1c'
       }
     }
