@@ -12,6 +12,7 @@
           type="text"
           v-model="form.email"
           :rules="emailRules"
+          autocomplete="email"
         ></v-text-field>
         <v-text-field
           id="password"
@@ -21,6 +22,7 @@
           type="password"
           v-model="form.password"
           :rules="[() => !!form.password || 'This field is required']"
+          autocomplete="current-password"
         ></v-text-field>
       </v-form>
     </v-card-text>
