@@ -1,26 +1,26 @@
 <template>
   <v-content>
-   <LTMNav/>
+   <MainNavbar/>
    <v-row>
-   <v-flex md3 id="column1">
-   <dashboardMenu/>
-   </v-flex>
-   <v-flex md3 id="column2">
-   <h1 class="middleGreen greeting">Hi, {{ this.$store.state.user }}</h1>
-   <h2 class="lightGreen subGreeting">Welcome to your dashboard</h2>
-   <notifications class=""/>
-   </v-flex>
-   <v-flex md4 id="column3">
-   <dashPostListing class="toTheLeft"/>
-   <myListings class="mt-6"/>
-   </v-flex>
+    <v-flex md3 id="column1">
+      <dashboardMenu/>
+    </v-flex>
+    <v-flex md3 id="column2">
+      <h1 class="middleGreen greeting">Hi, {{ this.$store.state.user }}</h1>
+      <h2 class="lightGreen subGreeting">Welcome to your dashboard</h2>
+      <notifications class=""/>
+    </v-flex>
+    <v-flex md4 id="column3">
+      <dashPostListing class="toTheLeft"/>
+      <myListings class="mt-6"/>
+    </v-flex>
    </v-row>
   </v-content>
 </template>
 
 <script>
 
-import LTMNav from '@/components/LTMNav.vue'
+import MainNavbar from '@/components/MainNavbar.vue'
 import notifications from '@/components/notifications.vue'
 import dashboardMenu from '@/components/dashboardMenu.vue'
 import myListings from '@/components/myListings.vue'
@@ -28,7 +28,13 @@ import dashPostListing from '@/components/dashPostListing.vue'
 
 export default {
   name: 'Dashboard',
-  components: { LTMNav, notifications, dashboardMenu, myListings, dashPostListing },
+  components: {
+    MainNavbar,
+    notifications,
+    dashboardMenu,
+    myListings,
+    dashPostListing
+  },
   computed: {
     user () {
       return this.$store.state.user

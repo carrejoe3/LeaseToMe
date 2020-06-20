@@ -1,21 +1,22 @@
 <template>
   <v-content>
-   <LTMNav/>
-   <AboutContent/>
+   <MainNavbar />
+   <AboutContent />
   </v-content>
 </template>
 
 <script>
+
 // @ is an alias to /src
-import LTMNav from '@/components/LTMNav.vue'
+import MainNavbar from '@/components/MainNavbar.vue'
 import AboutContent from '@/components/AboutContent.vue'
 
 export default {
   name: 'About',
-  components: { LTMNav, AboutContent }
+  components: {
+    MainNavbar,
+    AboutContent
+  }
 }
+
 </script>
-
-<style scoped>
-
-<style>
