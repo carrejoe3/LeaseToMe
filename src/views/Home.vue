@@ -2,6 +2,7 @@
   <v-main class="home">
     <MainNavbar />
     <HeroImage />
+    <CallToActionBtns />
     <ANewApproach />
     <HowLTMWorks />
     <WeDoThingsDifferently />
@@ -16,6 +17,7 @@
 // @ is an alias to /src
 import MainNavbar from '@/components/navbars/MainNavbar'
 import HeroImage from '@/components/home/HeroImage'
+import CallToActionBtns from '@/components/home/CallToActionBtns'
 import ANewApproach from '@/components/home/ANewApproach'
 import HowLTMWorks from '@/components/home/HowLTMWorks'
 import WeDoThingsDifferently from '@/components/home/WeDoThingsDifferently'
@@ -28,6 +30,7 @@ export default {
   components: {
     MainNavbar,
     HeroImage,
+    CallToActionBtns,
     ANewApproach,
     HowLTMWorks,
     WeDoThingsDifferently,

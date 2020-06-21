@@ -3,7 +3,7 @@
     <v-row align="center" justify="center">
       <v-col class="text-center" cols="12">
         <h1 class="text-h3 font-weight-bold mb-4">The Better Way to Lease NYC Retail Space</h1>
-        <h4 class="subheading">Streamline your search</h4>
+        <h4 class="text-h5">Streamline your search</h4>
       </v-col>
     </v-row>
   </v-parallax>
