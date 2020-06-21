@@ -13,7 +13,7 @@
           <div class="mt-5">Businesses list their specific real estate needs on the LeaseToMe marketplace. Our resources provide assistance each step of the way.</div>
           <div class="mt-5 actionTitle">
             Post Requirements
-            <v-icon color="darkGreen">mdi-arrow-right</v-icon>
+            <v-icon color="primary">mdi-arrow-right</v-icon>
           </div>
         </v-col>
       </v-row>
@@ -29,7 +29,7 @@
           <div class="mt-5">Landlords and brokers find desirable tenants on the marketplace and proactively pursue them for their matching vacancies.</div>
           <div class="mt-5 actionTitle">
             Browse Tenant Listings
-            <v-icon color="darkGreen">mdi-arrow-right</v-icon>
+            <v-icon color="primary">mdi-arrow-right</v-icon>
           </div>
         </v-col>
       </v-row>
@@ -45,7 +45,7 @@
           <div class="mt-5">We facilitate the process. Tenants receive competitive proposals or tailored property information from landlords and brokers, and respond with a single click.</div>
           <div class="mt-5 actionTitle">
             Become a Member
-            <v-icon color="darkGreen">mdi-arrow-right</v-icon>
+            <v-icon color="primary">mdi-arrow-right</v-icon>
           </div>
           <div id="joinForFree">JOIN FOR FREE</div>
         </v-col>
@@ -69,7 +69,7 @@ export default {
   .actionTitle {
     font-size: 1.2em;
     font-weight: 600;
-    color: $darkGreen;
+    color: $primary;
     cursor: pointer;
   }
 

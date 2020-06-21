@@ -56,8 +56,8 @@ export default {
 <style scoped lang="scss">
 /* Font Colors */
 
-  .darkGreen {
-    color: $darkGreen;
+  .primary {
+    color: $primary;
   }
   .middleGreen {
     color: $middleGreen;

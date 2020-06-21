@@ -1,7 +1,7 @@
 <template>
   <v-container fluid id="footerBar" class="pa-0">
     <v-container class="pa-0">
-      <v-toolbar color="darkGreen" flat>
+      <v-toolbar color="primary" flat>
         <v-btn x-small text color="accent">Copyright ©2020 LeaseToMe</v-btn>
         <v-spacer></v-spacer>
         <v-btn x-small text color="accent">Privacy Policy</v-btn>
@@ -21,6 +21,6 @@ export default {
 
 <style lang="scss" scoped>
 #footerBar {
-  background-color: $darkGreen;
+  background-color: $primary;
 }
 </style>

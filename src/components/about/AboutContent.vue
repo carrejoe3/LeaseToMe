@@ -24,7 +24,7 @@
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title class="darkGreen" id="avatarName">Justin Baker</v-list-item-title>
+          <v-list-item-title class="primary" id="avatarName">Justin Baker</v-list-item-title>
           <v-list-item-title class="middleGreen" id="avatarTitle">co-founder & ceo</v-list-item-title>
           <v-list-item-title></v-list-item-title>
           <v-icon id="icon" large color="green darken-2">mdi-domain</v-icon>
@@ -47,7 +47,7 @@
           alt="John">
         </v-list-item-avatar>
         <v-list-item-content>
-          <v-list-item-title class="darkGreen" id="avatarName">Ben Titcomb</v-list-item-title>
+          <v-list-item-title class="primary" id="avatarName">Ben Titcomb</v-list-item-title>
           <v-list-item-title class="middleGreen" id="avatarTitle">co-founder & coo</v-list-item-title>
           <v-icon id="icon" large color="green darken-2">mdi-domain</v-icon>
         </v-list-item-content>
@@ -84,8 +84,8 @@ export default {
 
 <style scoped lang="scss">
 /* Font Colors */
-  .darkGreen {
-    color: $darkGreen;
+  .primary {
+    color: $primary;
   }
 
   .middleGreen {

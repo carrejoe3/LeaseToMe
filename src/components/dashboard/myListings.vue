@@ -30,7 +30,7 @@ h1 {
   font-weight: normal;
 }
 h2 {
-  color: $darkGreen;
+  color: $primary;
   font-size: 1.5vw;
   font-weight: normal;
 }

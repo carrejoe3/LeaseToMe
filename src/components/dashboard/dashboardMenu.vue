@@ -47,13 +47,13 @@ export default {
 
 h1 {
   margin-top: 7vw;
-  color: $darkGreen;
+  color: $primary;
   font-size: 2vw;
   font-weight: normal;
 }
 
 h2 {
-  color: $darkGreen;
+  color: $primary;
   font-size: 1.75vw;
   font-weight: normal;
 }

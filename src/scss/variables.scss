@@ -1,4 +1,4 @@
-$darkGreen: #298140;
+$primary: #298140;
 $middleGreen: #257B2D;
 $lightGreen: #37AA49;
 $cardTeal: #edf7f6;
@@ -15,7 +15,7 @@ body {
   }
 
   .bannerTitle {
-    color: $darkGreen;
+    color: $primary;
     font-size: 2.5em;
     font-weight: 600;
     letter-spacing: 0px;
