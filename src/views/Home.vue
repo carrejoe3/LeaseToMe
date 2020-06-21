@@ -34,6 +34,9 @@ export default {
     HowWeHelp,
     Footer,
     FooterBar
+  },
+  mounted () {
+    this.$store.commit('setState', { property: 'currentPage', value: 'home' })
   }
 }
 

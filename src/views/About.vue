@@ -16,6 +16,9 @@ export default {
   components: {
     MainNavbar,
     AboutContent
+  },
+  mounted () {
+    this.$store.commit('setState', { property: 'currentPage', value: 'about' })
   }
 }
 

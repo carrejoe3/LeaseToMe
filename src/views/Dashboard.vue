@@ -48,6 +48,7 @@ export default {
   methods: {
   },
   mounted () {
+    this.$store.commit('setState', { property: 'currentPage', value: 'dashboard' })
   }
 }
 </script>

@@ -16,6 +16,9 @@ export default {
   name: 'Login',
   components: {
     LoginForm
+  },
+  mounted () {
+    this.$store.commit('setState', { property: 'currentPage', value: 'login' })
   }
 }
 

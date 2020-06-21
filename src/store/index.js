@@ -9,7 +9,8 @@ export default new Vuex.Store({
   state: {
     user: null,
     notifications: ['hello1', 'hello2'],
-    loginFormState: 'signIn'
+    loginFormState: 'signIn',
+    currentPage: ''
   },
   mutations: {
     setState (state, payload) {

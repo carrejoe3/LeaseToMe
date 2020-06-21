@@ -1,7 +1,7 @@
 <template>
   <v-toolbar>
     <v-icon large color="mainGreen" class="mr-2">mdi-domain</v-icon>
-    <v-toolbar-title id="title">LeaseToMe</v-toolbar-title>
+    <v-toolbar-title id="title" @click="navToHome">LeaseToMe</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
       <v-btn x-small text color="mainGreen">Tenant Listings</v-btn>
@@ -14,7 +14,17 @@
 <script>
 
 export default {
-  name: 'MainNavBar'
+  name: 'MainNavBar',
+  computed: {
+    currentPage () {
+      return this.$store.state.currentPage
+    }
+  },
+  methods: {
+    navToHome () {
+      if (this.currentPage !== 'home') this.$router.push('Home')
+    }
+  }
 }
 
 </script>
@@ -23,5 +33,6 @@ export default {
 #title {
   font-weight: 700;
   color: $middleGreen;
+  cursor: pointer;
 }
 </style>
