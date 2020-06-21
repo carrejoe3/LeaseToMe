@@ -2,7 +2,7 @@
   <v-container id="footer" fluid>
     <v-container>
       <v-row>
-        <v-col xs="12" sm="6" md="3" lg="4">
+        <v-col xs="12" sm="4" md="3" lg="4">
           <v-list color="darkGreen" dark>
             <v-list-item three-line>
               <v-list-item-content>
@@ -30,62 +30,52 @@
             </v-btn>
           </div>
         </v-col>
-        <v-col xs="6" sm="4" md="2" lg="2">
-          <v-list color="darkGreen" dark>
-            <v-list-item>
-              <v-list-item-content>
-                <v-list-item-title>TENANTS</v-list-item-title>
-                <v-list-item-subtitle>Sign Up</v-list-item-subtitle>
-                <v-list-item-subtitle>How It Works</v-list-item-subtitle>
-                <v-list-item-subtitle>List Requirements</v-list-item-subtitle>
-                <v-list-item-subtitle>Find Spaces</v-list-item-subtitle>
-                <v-list-item-subtitle>Find Brokers</v-list-item-subtitle>
-                <v-list-item-subtitle>Lease-brary</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+        <v-col xs="6" sm="3" md="2" lg="2">
+          <v-list color="darkGreen" dark dense>
+            <v-list-item-title>TENANTS</v-list-item-title>
+            <v-list-item-group>
+              <v-list-item v-for="(item, i) in tenants" :key="i" :to="item.navTo">
+                <v-list-item-content>
+                  <v-list-item-title v-text="item.title"></v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list-item-group>
           </v-list>
         </v-col>
-        <v-col xs="6" sm="4" md="2" lg="2">
-          <v-list color="darkGreen" dark>
-            <v-list-item>
-              <v-list-item-content>
-                <v-list-item-title>LANDLORDS</v-list-item-title>
-                <v-list-item-subtitle>Sign Up</v-list-item-subtitle>
-                <v-list-item-subtitle>How It Works</v-list-item-subtitle>
-                <v-list-item-subtitle>List Spaces</v-list-item-subtitle>
-                <v-list-item-subtitle>Find Tenants</v-list-item-subtitle>
-                <v-list-item-subtitle>Find Brokers</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+        <v-col xs="6" sm="3" md="2" lg="2">
+          <v-list color="darkGreen" dark dense>
+            <v-list-item-title>LANDLORDS</v-list-item-title>
+            <v-list-item-group>
+              <v-list-item v-for="(item, i) in landlords" :key="i" :to="item.navTo">
+                <v-list-item-content>
+                  <v-list-item-title v-text="item.title"></v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list-item-group>
           </v-list>
         </v-col>
-        <v-col xs="6" sm="4" md="2" lg="2">
-          <v-list color="darkGreen" dark>
-            <v-list-item>
-              <v-list-item-content>
-                <v-list-item-title>BROKERS</v-list-item-title>
-                <v-list-item-subtitle>Sign Up</v-list-item-subtitle>
-                <v-list-item-subtitle>How It Works</v-list-item-subtitle>
-                <v-list-item-subtitle>List Requirements</v-list-item-subtitle>
-                <v-list-item-subtitle>List Spaces</v-list-item-subtitle>
-                <v-list-item-subtitle>Find Tenants</v-list-item-subtitle>
-                <v-list-item-subtitle>Find Spaces</v-list-item-subtitle>
-                <v-list-item-subtitle>Broker Directory</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+        <v-col xs="6" sm="3" md="2" lg="2">
+          <v-list color="darkGreen" dark dense>
+            <v-list-item-title>BROKERS</v-list-item-title>
+            <v-list-item-group>
+              <v-list-item v-for="(item, i) in brokers" :key="i" :to="item.navTo">
+                <v-list-item-content>
+                  <v-list-item-title v-text="item.title"></v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list-item-group>
           </v-list>
         </v-col>
-        <v-col xs="6" sm="4" md="2" lg="2">
-          <v-list color="darkGreen" dark>
-            <v-list-item>
-              <v-list-item-content>
-                <v-list-item-title>COMPANY</v-list-item-title>
-                <v-list-item-subtitle>About Us</v-list-item-subtitle>
-                <v-list-item-subtitle>Retail Scoop</v-list-item-subtitle>
-                <v-list-item-subtitle>Blog</v-list-item-subtitle>
-                <v-list-item-subtitle>Lease-brary</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+        <v-col xs="6" sm="3" md="2" lg="2">
+          <v-list color="darkGreen" dark dense>
+            <v-list-item-title>COMPANY</v-list-item-title>
+            <v-list-item-group>
+              <v-list-item v-for="(item, i) in company" :key="i" :to="item.navTo">
+                <v-list-item-content>
+                  <v-list-item-title v-text="item.title"></v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list-item-group>
           </v-list>
         </v-col>
       </v-row>
@@ -96,7 +86,107 @@
 <script>
 
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  data () {
+    return {
+      tenants: [
+        {
+          title: 'Sign Up',
+          navTo: 'About'
+        },
+        {
+          title: 'How It Works',
+          navTo: 'About'
+        },
+        {
+          title: 'List Requirements',
+          navTo: 'About'
+        },
+        {
+          title: 'Find Spaces',
+          navTo: 'About'
+        },
+        {
+          title: 'Find Brokers',
+          navTo: 'About'
+        },
+        {
+          title: 'Lease-brary',
+          navTo: 'About'
+        }
+      ],
+      landlords: [
+        {
+          title: 'Sign Up',
+          navTo: 'About'
+        },
+        {
+          title: 'How It Works',
+          navTo: 'About'
+        },
+        {
+          title: 'List Spaces',
+          navTo: 'About'
+        },
+        {
+          title: 'Find Tenants',
+          navTo: 'About'
+        },
+        {
+          title: 'Find Brokers',
+          navTo: 'About'
+        }
+      ],
+      brokers: [
+        {
+          title: 'Sign Up',
+          navTo: 'About'
+        },
+        {
+          title: 'How It Works',
+          navTo: 'About'
+        },
+        {
+          title: 'List Requirements',
+          navTo: 'About'
+        },
+        {
+          title: 'List Spaces',
+          navTo: 'About'
+        },
+        {
+          title: 'Find Tenants',
+          navTo: 'About'
+        },
+        {
+          title: 'Find Spaces',
+          navTo: 'About'
+        },
+        {
+          title: 'Broker Directory',
+          navTo: 'About'
+        }
+      ],
+      company: [
+        {
+          title: 'About Us',
+          navTo: 'About'
+        },
+        {
+          title: 'Retail Scoop',
+          navTo: 'About'
+        },
+        {
+          title: 'Blog',
+          navTo: 'About'
+        },
+        {
+          title: 'Lease-brary',
+          navTo: 'About'
+        }
+      ]
+    }
+  }
 }
 
 </script>
