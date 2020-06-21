@@ -13,6 +13,7 @@ export default new Vuetify({
         darkGreen: '#298140',
         lightGreen: '#37AA49',
         lightGrey: '#F3F3F3',
+        darkGrey: '#54595F',
         accent: '#ffffff',
         error: '#b71c1c'
       }
