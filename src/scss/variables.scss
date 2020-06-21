@@ -1,6 +1,25 @@
-$darkGreen: #2A572E;
+$darkGreen: #298140;
 $middleGreen: #257B2D;
-$lightGreen: #36C943;
+$lightGreen: #37AA49;
 $cardTeal: #edf7f6;
 $lightGrey: #F3F3F3;
 $accent: white;
+
+body {
+  font-family: "sofia-pro", Sans-serif;
+
+  .bannerTitle {
+    color: $darkGreen;
+    font-size: 2.5em;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 1.2em;
+  }
+
+  .bannerSubtitle {
+    color: $lightGreen;
+    font-size: 1.6em;
+    font-weight: 600;
+    line-height: 1.2em;
+  }
+}
