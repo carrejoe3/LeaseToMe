@@ -1,5 +1,5 @@
 <template>
-  <v-content>
+  <v-main>
    <MainNavbar/>
    <v-row>
     <v-flex md3 id="column1">
@@ -15,7 +15,7 @@
       <myListings class="mt-6"/>
     </v-flex>
    </v-row>
-  </v-content>
+  </v-main>
 </template>
 
 <script>

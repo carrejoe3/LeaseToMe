@@ -1,12 +1,12 @@
 <template>
-  <v-content class="home">
+  <v-main class="home">
     <MainNavbar />
     <ANewApproach />
     <WeDoThingsDifferently />
     <HowWeHelp />
     <Footer />
     <FooterBar />
-  </v-content>
+  </v-main>
 </template>
 
 <script>

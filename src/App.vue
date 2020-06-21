@@ -1,9 +1,9 @@
 <template>
   <v-app>
-    <v-content class="pa-0">
+    <v-main class="pa-0">
       <AccountNavBar />
       <router-view></router-view>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 

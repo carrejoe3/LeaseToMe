@@ -1,8 +1,8 @@
 <template>
-  <v-content>
+  <v-main>
    <MainNavbar />
    <AboutContent />
-  </v-content>
+  </v-main>
 </template>
 
 <script>
