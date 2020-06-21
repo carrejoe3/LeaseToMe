@@ -8,6 +8,11 @@ $accent: white;
 
 body {
   font-family: "sofia-pro", Sans-serif;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .bannerTitle {
     color: $darkGreen;

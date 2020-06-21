@@ -2,6 +2,7 @@
   <v-main class="home">
     <MainNavbar />
     <ANewApproach />
+    <HowLTMWorks />
     <WeDoThingsDifferently />
     <HowWeHelp />
     <Footer />
@@ -14,6 +15,7 @@
 // @ is an alias to /src
 import MainNavbar from '@/components/navbars/MainNavbar'
 import ANewApproach from '@/components/home/ANewApproach'
+import HowLTMWorks from '@/components/home/HowLTMWorks'
 import WeDoThingsDifferently from '@/components/home/WeDoThingsDifferently'
 import HowWeHelp from '@/components/home/HowWeHelp'
 import Footer from '@/components/footer/Footer'
@@ -24,6 +26,7 @@ export default {
   components: {
     MainNavbar,
     ANewApproach,
+    HowLTMWorks,
     WeDoThingsDifferently,
     HowWeHelp,
     Footer,
