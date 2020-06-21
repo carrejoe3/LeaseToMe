@@ -6,7 +6,7 @@
       <dashboardMenu/>
     </v-flex>
     <v-flex md3 id="column2">
-      <h1 class="middleGreen greeting">Hi, {{ this.$store.state.user }}</h1>
+      <h1 class="middleGreen greeting">Hi, {{ this.$store.state.user.attributes.email }}</h1>
       <h2 class="lightGreen subGreeting">Welcome to your dashboard</h2>
       <notifications class=""/>
     </v-flex>
