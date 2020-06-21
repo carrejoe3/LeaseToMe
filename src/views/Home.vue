@@ -1,6 +1,7 @@
 <template>
   <v-main class="home">
     <MainNavbar />
+    <HeroImage />
     <ANewApproach />
     <HowLTMWorks />
     <WeDoThingsDifferently />
@@ -14,6 +15,7 @@
 
 // @ is an alias to /src
 import MainNavbar from '@/components/navbars/MainNavbar'
+import HeroImage from '@/components/home/HeroImage'
 import ANewApproach from '@/components/home/ANewApproach'
 import HowLTMWorks from '@/components/home/HowLTMWorks'
 import WeDoThingsDifferently from '@/components/home/WeDoThingsDifferently'
@@ -25,6 +27,7 @@ export default {
   name: 'Home',
   components: {
     MainNavbar,
+    HeroImage,
     ANewApproach,
     HowLTMWorks,
     WeDoThingsDifferently,
