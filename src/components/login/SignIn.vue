@@ -1,5 +1,5 @@
 <template>
-  <v-card class="elevation-12">
+  <v-card class="elevation-12" :loading="this.isLoading">
     <v-toolbar color="primary" dark flat>
       <v-toolbar-title>Login</v-toolbar-title>
     </v-toolbar>
@@ -29,7 +29,7 @@
     <v-card-actions>
       <span @click="loginFormState = 'signUp'" class="ml-3">Need an account? Sign Up</span>
       <v-spacer></v-spacer>
-      <v-btn color="primary" @click="signIn" :disabled="!valid">Login</v-btn>
+      <v-btn color="primary" @click="signIn" :disabled="isLoading !== false || !valid">Login</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -45,6 +45,7 @@ export default {
         email: '',
         password: ''
       },
+      isLoading: false,
       valid: false,
       emailRules: [
         (v) => !!v || 'E-mail is required',
@@ -67,7 +68,9 @@ export default {
   },
   methods: {
     async signIn () {
+      this.isLoading = 'accent'
       await Auth.signIn(this.form.email, this.form.password)
+      this.isLoading = false
     }
   }
 }
