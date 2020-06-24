@@ -27,11 +27,17 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard
+  },
+  {
+    path: '/propertyListing',
+    name: 'PropertyListing',
+    component: () => import(/* webpackChunkName: "propertyListing" */ '../views/PropertyListing.vue')
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
+  base: process.env.BASE_URL,
   routes
 })
 
