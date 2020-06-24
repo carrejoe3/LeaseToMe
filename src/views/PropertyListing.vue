@@ -1,50 +1,75 @@
 <template>
-  <v-stepper v-model="e1">
-    <v-stepper-header>
-      <v-stepper-step :complete="e1 > 1" step="1">Name of step 1</v-stepper-step>
+  <v-main>
+    <MainNavbar />
+    <v-stepper v-model="step" alt-labels>
+      <v-stepper-header>
+        <v-stepper-step :complete="step > 1" step="1">Location</v-stepper-step>
 
-      <v-divider></v-divider>
+        <v-divider></v-divider>
 
-      <v-stepper-step :complete="e1 > 2" step="2">Name of step 2</v-stepper-step>
+        <v-stepper-step :complete="step > 2" step="2">Basic Info</v-stepper-step>
 
-      <v-divider></v-divider>
+        <v-divider></v-divider>
 
-      <v-stepper-step step="3">Name of step 3</v-stepper-step>
-    </v-stepper-header>
+        <v-stepper-step :complete="step > 3" step="3">Key Features</v-stepper-step>
 
-    <v-stepper-items>
-      <v-stepper-content step="1">
-        <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
+        <v-divider></v-divider>
 
-        <v-btn color="primary" @click="e1 = 2">Continue</v-btn>
+        <v-stepper-step :complete="step > 4" step="4">Description</v-stepper-step>
 
-        <v-btn text>Cancel</v-btn>
-      </v-stepper-content>
+        <v-divider></v-divider>
 
-      <v-stepper-content step="2">
-        <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
+        <v-stepper-step :complete="step > 5" step="5">Details</v-stepper-step>
 
-        <v-btn color="primary" @click="e1 = 3">Continue</v-btn>
+        <v-divider></v-divider>
 
-        <v-btn text>Cancel</v-btn>
-      </v-stepper-content>
+        <v-stepper-step :complete="step > 6" step="6">Photos</v-stepper-step>
 
-      <v-stepper-content step="3">
-        <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
+        <v-divider></v-divider>
 
-        <v-btn color="primary" @click="e1 = 1">Continue</v-btn>
+        <v-stepper-step :complete="step > 7" step="7">Submit</v-stepper-step>
+      </v-stepper-header>
 
-        <v-btn text>Cancel</v-btn>
-      </v-stepper-content>
-    </v-stepper-items>
-  </v-stepper>
+      <v-stepper-items>
+        <v-stepper-content step="1">
+          <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
+
+          <v-btn color="primary" @click="step = 2">Continue</v-btn>
+
+          <v-btn text>Cancel</v-btn>
+        </v-stepper-content>
+
+        <v-stepper-content step="2">
+          <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
+
+          <v-btn color="primary" @click="step = 3">Continue</v-btn>
+
+          <v-btn text>Cancel</v-btn>
+        </v-stepper-content>
+
+        <v-stepper-content step="3">
+          <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
+
+          <v-btn color="primary" @click="step = 1">Continue</v-btn>
+
+          <v-btn text>Cancel</v-btn>
+        </v-stepper-content>
+      </v-stepper-items>
+    </v-stepper>
+  </v-main>
 </template>
 
 <script>
+
+import MainNavbar from '@/components/navbars/MainNavbar'
+
 export default {
+  components: {
+    MainNavbar
+  },
   data () {
     return {
-      e1: 1
+      step: 1
     }
   }
 }
