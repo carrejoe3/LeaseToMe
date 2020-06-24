@@ -32,11 +32,7 @@
 
       <v-stepper-items>
         <v-stepper-content step="1">
-          <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
-
-          <v-btn color="primary" @click="step = 2">Continue</v-btn>
-
-          <v-btn text>Cancel</v-btn>
+          <locationQs />
         </v-stepper-content>
 
         <v-stepper-content step="2">
@@ -62,14 +58,21 @@
 <script>
 
 import MainNavbar from '@/components/navbars/MainNavbar'
+import locationQs from '@/components/propertyListing/locationQs'
 
 export default {
   components: {
-    MainNavbar
+    MainNavbar,
+    locationQs
   },
-  data () {
-    return {
-      step: 1
+  computed: {
+    step: {
+      get () {
+        return this.$store.state.propertyListingQsStep
+      },
+      set (value) {
+        this.$store.commit('setState', { property: 'propertyListingQsStep', value: value })
+      }
     }
   }
 }

@@ -10,7 +10,11 @@ export default new Vuex.Store({
     user: null,
     notifications: ['hello1', 'hello2'],
     loginFormState: 'signIn',
-    currentPage: ''
+    currentPage: '',
+    propertyListingQsStep: 1,
+    propertyListingData: {
+      selectedBorough: null
+    }
   },
   mutations: {
     setState (state, payload) {
