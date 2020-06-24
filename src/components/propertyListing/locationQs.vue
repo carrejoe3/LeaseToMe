@@ -1,7 +1,11 @@
 <template>
-  <v-card color="lightGrey">
-    <v-card-title class="submissionTitle">Where is your property located?</v-card-title>
-    <v-btn @click="selectBorough(btn.value)" v-for="(btn, index) in locationBtns" :key="index" class="ma-2" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
+  <v-card color="lightGrey" width="800" class="mx-auto ma-5">
+    <v-card-title class="submissionTitle pt-10 text-center">Where is your property located?</v-card-title>
+    <v-card-text>
+      <v-btn @click="selectBorough(btn.value)" v-for="(btn, index) in locationBtns" :key="index" class="ma-5" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
+      <v-text-field class="ma-5" solo></v-text-field>
+      <v-text-field class="ma-5" solo></v-text-field>
+    </v-card-text>
   </v-card>
 </template>
 
