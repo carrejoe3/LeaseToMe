@@ -1,5 +1,5 @@
 <template>
-  <v-card color="lightGrey" width="800" class="mx-auto ma-5" id="locationQs">
+  <v-card color="lightGrey" width="800" class="mx-auto ma-5" id="locationQs" flat>
     <v-card-title class="submissionTitle pt-10">Where is your property located?</v-card-title>
     <v-card-text>
       <v-btn @click="selectBorough(btn.value)" v-for="(btn, index) in locationBtns" :key="index" class="ma-4" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
@@ -13,7 +13,7 @@
       </div>
     </v-card-text>
     <v-card-actions class="justify-space-around">
-      <v-btn x-large color="primary" class="mb-5" :disabled="!nextBtnEnabled">
+      <v-btn x-large color="primary" class="mb-5" :disabled="!nextBtnEnabled" @click="step++">
         Next
         <v-icon>mdi-arrow-right</v-icon>
       </v-btn>
@@ -73,7 +73,7 @@ export default {
       }
     },
     nextBtnEnabled () {
-      return this.property.address !== '' && this.property.neighborhood !== '' && this.property.address !== null && this.property.neighborhood !== null && this.property.selectedBorough !== null
+      return this.property.address !== '' && this.property.neighborhood !== '' && this.property.selectedBorough !== ''
     }
   },
   methods: {

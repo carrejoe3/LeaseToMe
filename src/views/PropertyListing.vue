@@ -36,11 +36,7 @@
         </v-stepper-content>
 
         <v-stepper-content step="2">
-          <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
-
-          <v-btn color="primary" @click="step = 3">Continue</v-btn>
-
-          <v-btn text>Cancel</v-btn>
+          <basicInfo />
         </v-stepper-content>
 
         <v-stepper-content step="3">
@@ -59,11 +55,13 @@
 
 import MainNavbar from '@/components/navbars/MainNavbar'
 import locationQs from '@/components/propertyListing/locationQs'
+import basicInfo from '@/components/propertyListing/basicInfo'
 
 export default {
   components: {
     MainNavbar,
-    locationQs
+    locationQs,
+    basicInfo
   },
   computed: {
     step: {
