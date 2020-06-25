@@ -6,19 +6,21 @@
         <dashboardMenu />
       </v-col>
       <v-col xs="4" sm="4" md="5" lg="5" xl="5">
-        <v-row class="ma-5">
-          <h1 v-if="this.$store.state.user">Hi, {{ this.$store.state.user.attributes.email }}</h1>
-          <h2>Welcome to your dashboard</h2>
+        <v-row class="ma-15">
+          <div class="d-inline">
+            <div class="bannerTitle">Hi<span v-if="this.$store.state.user">, {{ this.$store.state.user.attributes.email }}</span></div>
+            <div class="bannerSubtitle">Welcome to your dashboard</div>
+          </div>
         </v-row>
-        <v-row class="ma-5">
+        <v-row class="ma-15">
           <notifications />
         </v-row>
       </v-col>
       <v-col xs="4" sm="4" md="4" lg="5" xl="5">
-        <v-row class="ma-5">
+        <v-row class="ma-15">
           <dashPostListing />
         </v-row>
-        <v-row class="ma-5">
+        <v-row class="ma-15">
           <myListings />
         </v-row>
       </v-col>
