@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar>
+  <v-toolbar height="64">
     <v-icon large color="mainGreen" class="mr-2">mdi-domain</v-icon>
     <v-toolbar-title id="title" @click="navToHome">LeaseToMe</v-toolbar-title>
     <v-spacer></v-spacer>

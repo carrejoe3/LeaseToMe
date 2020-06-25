@@ -1,20 +1,28 @@
 <template>
   <v-main>
-   <MainNavbar/>
-   <v-row>
-    <v-flex md3 id="column1">
-      <dashboardMenu/>
-    </v-flex>
-    <v-flex md3 id="column2">
-      <h1 class="middleGreen greeting" v-if="this.$store.state.user">Hi, {{ this.$store.state.user.attributes.email }}</h1>
-      <h2 class="lightGreen subGreeting">Welcome to your dashboard</h2>
-      <notifications class=""/>
-    </v-flex>
-    <v-flex md4 id="column3">
-      <dashPostListing class="toTheLeft"/>
-      <myListings class="mt-6"/>
-    </v-flex>
-   </v-row>
+    <MainNavbar />
+    <v-row no-gutters>
+      <v-col xs="4" sm="4" md="3" lg="2" xl="2">
+        <dashboardMenu />
+      </v-col>
+      <v-col xs="4" sm="4" md="5" lg="5" xl="5">
+        <v-row class="ma-5">
+          <h1 v-if="this.$store.state.user">Hi, {{ this.$store.state.user.attributes.email }}</h1>
+          <h2>Welcome to your dashboard</h2>
+        </v-row>
+        <v-row class="ma-5">
+          <notifications />
+        </v-row>
+      </v-col>
+      <v-col xs="4" sm="4" md="4" lg="5" xl="5">
+        <v-row class="ma-5">
+          <dashPostListing />
+        </v-row>
+        <v-row class="ma-5">
+          <myListings />
+        </v-row>
+      </v-col>
+    </v-row>
   </v-main>
 </template>
 
@@ -54,49 +62,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/* Font Colors */
 
-  .primary {
-    color: $primary;
-  }
-  .middleGreen {
-    color: $middleGreen;
-  }
-  .lightGreen {
-    color: $lightGreen;
-  }
-
-/* Font Colors */
-  #column1 {
-    margin-right: 5vw;
-  }
-
-  #column2 {
-    margin-top: 8vw;
-  }
-
-  #column3 {
-    margin-top: 11vw;
-    margin-left: 3vw;
-  }
-
-  .toTheLeft {
-    margin-right: 115px;
-    margin-bottom: 2vw;
-  }
-
-  .smaller {
-    max-width: 256px;
-  }
-
-  .greeting {
-    font-size: 3vw;
-    font-weight: 450;
-  }
-
-  .subGreeting {
-    margin-bottom: 1.5vw;
-    font-size: 2vw;
-    font-weight: normal;
-  }
 </style>
