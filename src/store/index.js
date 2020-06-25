@@ -16,7 +16,8 @@ export default new Vuex.Store({
       selectedBorough: '',
       neighborhood: '',
       address: '',
-      type: ''
+      type: '',
+      popupRentals: false
     }
   },
   mutations: {

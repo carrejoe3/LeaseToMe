@@ -14,7 +14,8 @@ export default new Vuetify({
         lightGrey: '#F3F3F3',
         darkGrey: '#54595F',
         accent: '#ffffff',
-        error: '#b71c1c'
+        error: '#b71c1c',
+        cardTeal: '#edf7f6'
       }
     }
   }

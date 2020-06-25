@@ -69,7 +69,7 @@ export default {
         return this.$store.state.propertyListingData
       },
       set (value) {
-        this.$store.commit('setState', { property: 'property', value: value })
+        this.$store.commit('setState', { property: 'propertyListingData', value: value })
       }
     },
     nextBtnEnabled () {

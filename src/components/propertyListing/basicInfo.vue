@@ -4,12 +4,20 @@
     <v-card-text>
       <v-btn @click="selectType(btn.value)" v-for="(btn, index) in typeBtns" :key="index" class="ma-4" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
       <div class="d-flex align-center ma-5">
+        <div class="text-h6 qLabel mr-5">Are you open to pop-up rentals?</div>
+        <v-switch :v-model="property.popupRentals" :label="property.popupRentals ? 'Yes' : 'No'"></v-switch>
+      </div>
+      <div class="d-flex align-center ma-5">
         <div class="text-h6 qLabel mr-5">What is the gross leasable square footage of the space?</div>
         <v-text-field solo hide-details v-model="property.neighborhood"></v-text-field>
       </div>
       <div class="d-flex align-center ma-5">
         <div class="text-h6 qLabel mr-5">What is the asking rent?</div>
-        <v-text-field solo hide-details v-model="property.address"></v-text-field>
+        <v-text-field solo hide-details v-model="property.address" prepend-icon="mdi-cash-usd-outline"></v-text-field>
+      </div>
+      <div class="d-flex align-center ma-5">
+        <div class="text-h6 qLabel mr-5">Expense Structure</div>
+        <v-btn @click="selectExpStruc(btn.value)" v-for="(btn, index) in expBtns" :key="index" class="ma-4" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
       </div>
     </v-card-text>
     <v-card-actions>
@@ -43,6 +51,23 @@ export default {
           value: 'generalRetail',
           active: false
         }
+      ],
+      expBtns: [
+        {
+          title: 'MMM',
+          value: 'mmm',
+          active: false
+        },
+        {
+          title: 'MG',
+          value: 'mg',
+          active: false
+        },
+        {
+          title: 'GROSS',
+          value: 'gross',
+          active: false
+        }
       ]
     }
   },
@@ -60,7 +85,8 @@ export default {
         return this.$store.state.propertyListingData
       },
       set (value) {
-        this.$store.commit('setState', { property: 'property', value: value })
+        console.log(value)
+        this.$store.commit('setState', { property: 'propertyListingData', value: value })
       }
     },
     nextBtnEnabled () {
@@ -69,11 +95,19 @@ export default {
   },
   methods: {
     selectType (type) {
-      this.property.selectedBorough = type
+      this.property.type = type
 
       for (const i in this.typeBtns) {
         this.typeBtns[i].active = false
         if (this.typeBtns[i].value === type) this.typeBtns[i].active = true
+      }
+    },
+    selectExpStruc (value) {
+      this.property.expenseStructure = value
+
+      for (const i in this.expBtns) {
+        this.expBtns[i].active = false
+        if (this.expBtns[i].value === value) this.expBtns[i].active = true
       }
     }
   }
