@@ -1,5 +1,5 @@
 <template>
-  <v-card tile color="lightGrey" elevation="20">
+  <v-card tile color="lightGrey" elevation="10">
     <v-navigation-drawer permanent id="sideMenu" height="calc(100vh - 94px)" color="transparent" width="100%">
       <v-container class="ma-4">
         <div class="menuTitle">Manage Properties</div>
