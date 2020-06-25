@@ -13,7 +13,9 @@ export default new Vuex.Store({
     currentPage: '',
     propertyListingQsStep: 1,
     propertyListingData: {
-      selectedBorough: null
+      selectedBorough: null,
+      neighborhood: null,
+      address: null
     }
   },
   mutations: {
