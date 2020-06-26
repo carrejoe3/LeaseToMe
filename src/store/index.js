@@ -30,11 +30,15 @@ export default new Vuex.Store({
       buildingClass: '',
       description: '',
       images: []
-    }
+    },
+    listedProperties: []
   },
   mutations: {
     setState (state, payload) {
       state[payload.property] = payload.value
+    },
+    pushToState (state, payload) {
+      state[payload.property].push(payload.value)
     }
   },
   actions: {
@@ -70,11 +74,10 @@ export default new Vuex.Store({
             buildingSize: state.propertyListingData.buildingSize,
             zoning: state.propertyListingData.zoning,
             buildingClass: state.propertyListingData.buildingClass,
-            description: state.propertyListingData.description,
-            images: ''
+            description: state.propertyListingData.description
           }
         }))
-        console.log(property)
+        commit('pushToState', { property: 'listedProperties', value: property.data.createProperty })
       } catch (err) {
         console.error(err)
       }
