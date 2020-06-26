@@ -42,6 +42,10 @@
         <v-stepper-content step="3">
           <keyFeatures />
         </v-stepper-content>
+
+        <v-stepper-content step="4">
+          <description />
+        </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
   </v-main>
@@ -53,13 +57,15 @@ import MainNavbar from '@/components/navbars/MainNavbar'
 import locationQs from '@/components/propertyListing/locationQs'
 import basicInfo from '@/components/propertyListing/basicInfo'
 import keyFeatures from '@/components/propertyListing/keyFeatures'
+import description from '@/components/propertyListing/description'
 
 export default {
   components: {
     MainNavbar,
     locationQs,
     basicInfo,
-    keyFeatures
+    keyFeatures,
+    description
   },
   computed: {
     step: {
