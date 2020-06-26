@@ -1,5 +1,5 @@
 <template>
-  <v-btn depressed rounded color="primary" xlarge>
+  <v-btn depressed rounded color="primary" x-large>
     + Post a Listing
   </v-btn>
 </template>
