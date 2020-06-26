@@ -54,6 +54,10 @@
         <v-stepper-content step="6">
           <photos />
         </v-stepper-content>
+
+        <v-stepper-content step="7">
+          <submitListing />
+        </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
   </v-main>
@@ -68,6 +72,7 @@ import keyFeatures from '@/components/propertyListing/keyFeatures'
 import description from '@/components/propertyListing/description'
 import extraDetails from '@/components/propertyListing/details'
 import photos from '@/components/propertyListing/photos'
+import submitListing from '@/components/propertyListing/submit'
 
 export default {
   components: {
@@ -77,7 +82,8 @@ export default {
     keyFeatures,
     description,
     extraDetails,
-    photos
+    photos,
+    submitListing
   },
   computed: {
     step: {
