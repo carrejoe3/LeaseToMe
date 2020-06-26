@@ -40,11 +40,7 @@
         </v-stepper-content>
 
         <v-stepper-content step="3">
-          <v-card class="mb-12" color="grey lighten-1" height="200px"></v-card>
-
-          <v-btn color="primary" @click="step = 1">Continue</v-btn>
-
-          <v-btn text>Cancel</v-btn>
+          <keyFeatures />
         </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
@@ -56,12 +52,14 @@
 import MainNavbar from '@/components/navbars/MainNavbar'
 import locationQs from '@/components/propertyListing/locationQs'
 import basicInfo from '@/components/propertyListing/basicInfo'
+import keyFeatures from '@/components/propertyListing/keyFeatures'
 
 export default {
   components: {
     MainNavbar,
     locationQs,
-    basicInfo
+    basicInfo,
+    keyFeatures
   },
   computed: {
     step: {
