@@ -73,7 +73,8 @@ export default {
       }
     },
     nextBtnEnabled () {
-      return this.property.address !== '' && this.property.neighborhood !== '' && this.property.selectedBorough !== ''
+      // return this.property.address !== '' && this.property.neighborhood !== '' && this.property.selectedBorough !== ''
+      return true
     }
   },
   methods: {

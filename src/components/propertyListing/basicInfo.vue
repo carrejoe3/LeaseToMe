@@ -89,7 +89,8 @@ export default {
       }
     },
     nextBtnEnabled () {
-      return this.property.type !== '' && this.property.expenseStructure !== '' && this.property.askingRent !== '' && this.property.squareFootage !== ''
+      // return this.property.type !== '' && this.property.expenseStructure !== '' && this.property.askingRent !== '' && this.property.squareFootage !== ''
+      return true
     }
   },
   methods: {
