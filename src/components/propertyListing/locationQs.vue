@@ -12,11 +12,13 @@
         <v-text-field solo hide-details v-model="property.address"></v-text-field>
       </div>
     </v-card-text>
-    <v-card-actions class="justify-space-around">
-      <v-btn x-large color="primary" class="mb-5" :disabled="!nextBtnEnabled" @click="step++">
-        Next
-        <v-icon>mdi-arrow-right</v-icon>
-      </v-btn>
+    <v-card-actions>
+      <div style="width: 100%;">
+        <v-btn x-large color="primary" class="mb-5" :disabled="!nextBtnEnabled" @click="step++">
+          Next
+          <v-icon>mdi-arrow-right</v-icon>
+        </v-btn>
+      </div>
     </v-card-actions>
   </v-card>
 </template>

@@ -8,7 +8,7 @@
       </v-chip-group>
     </v-card-text>
     <v-card-actions>
-      <div class="justify-space-around" style="width: 100%;">
+      <div style="width: 100%;">
         <v-btn x-large color="primary" class="mb-5 mr-2" @click="step--">
           Back
           <v-icon>mdi-arrow-left</v-icon>
@@ -100,5 +100,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+#keyFeatures {
+  text-align: center;
+}
 </style>

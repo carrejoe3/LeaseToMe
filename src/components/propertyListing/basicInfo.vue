@@ -1,5 +1,5 @@
 <template>
-  <v-card color="lightGrey" width="800" class="mx-auto ma-5" id="locationQs" flat>
+  <v-card color="lightGrey" width="800" class="mx-auto ma-5" id="basicInfo" flat>
     <v-card-title class="submissionTitle pt-10">How would you categorize the space?</v-card-title>
     <v-card-text>
       <v-btn @click="selectType(btn.value)" v-for="(btn, index) in typeBtns" :key="index" class="ma-4" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
@@ -21,7 +21,7 @@
       </div>
     </v-card-text>
     <v-card-actions>
-      <div class="justify-space-around" style="width: 100%;">
+      <div style="width: 100%;">
         <v-btn x-large color="primary" class="mb-5 mr-2" @click="step--">
           Back
           <v-icon>mdi-arrow-left</v-icon>
@@ -116,7 +116,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#locationQs {
+#basicInfo {
   text-align: center;
 
   .qLabel {
