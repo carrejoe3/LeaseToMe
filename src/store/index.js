@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { API, graphqlOperation } from 'aws-amplify'
 import * as queries from '../graphql/queries'
+import * as mutations from '../graphql/mutations'
 
 Vue.use(Vuex)
 
@@ -27,6 +28,7 @@ export default new Vuex.Store({
       buildingSize: '',
       zoning: '',
       buildingClass: '',
+      description: '',
       images: []
     }
   },
@@ -46,6 +48,33 @@ export default new Vuex.Store({
           }
         }))
         commit('setState', { property: 'notifications', value: notifications.data.listNotifications.items })
+      } catch (err) {
+        console.error(err)
+      }
+    },
+    async submitProperty ({ commit, state }) {
+      try {
+        const property = await API.graphql(graphqlOperation(mutations.createProperty, {
+          input: {
+            ownerId: state.user.username,
+            selectedBorough: state.propertyListingData.selectedBorough,
+            neighborhood: state.propertyListingData.neighborhood,
+            address: state.propertyListingData.address,
+            type: state.propertyListingData.type,
+            popupRentals: state.propertyListingData.popupRentals,
+            squareFootage: state.propertyListingData.squareFootage,
+            expenseStructure: state.propertyListingData.expenseStructure,
+            askingRent: state.propertyListingData.askingRent,
+            availableNow: state.propertyListingData.availableNow,
+            idealLeaseTerm: state.propertyListingData.idealLeaseTerm,
+            buildingSize: state.propertyListingData.buildingSize,
+            zoning: state.propertyListingData.zoning,
+            buildingClass: state.propertyListingData.buildingClass,
+            description: state.propertyListingData.description,
+            images: ''
+          }
+        }))
+        console.log(property)
       } catch (err) {
         console.error(err)
       }

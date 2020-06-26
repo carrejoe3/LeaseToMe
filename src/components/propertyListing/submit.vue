@@ -63,7 +63,7 @@ export default {
       }
     },
     submitListing () {
-      console.log('submit logic goes here')
+      this.$store.dispatch('submitProperty')
     }
   }
 }

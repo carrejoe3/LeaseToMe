@@ -270,7 +270,19 @@ export const onCreateProperty = /* GraphQL */ `
     onCreateProperty {
       id
       ownerId
+      selectedBorough
+      neighborhood
       address
+      type
+      popupRentals
+      squareFootage
+      expenseStructure
+      askingRent
+      availableNow
+      idealLeaseTerm
+      buildingSize
+      zoning
+      buildingClass
       description
       images {
         items {
@@ -292,7 +304,19 @@ export const onUpdateProperty = /* GraphQL */ `
     onUpdateProperty {
       id
       ownerId
+      selectedBorough
+      neighborhood
       address
+      type
+      popupRentals
+      squareFootage
+      expenseStructure
+      askingRent
+      availableNow
+      idealLeaseTerm
+      buildingSize
+      zoning
+      buildingClass
       description
       images {
         items {
@@ -314,7 +338,19 @@ export const onDeleteProperty = /* GraphQL */ `
     onDeleteProperty {
       id
       ownerId
+      selectedBorough
+      neighborhood
       address
+      type
+      popupRentals
+      squareFootage
+      expenseStructure
+      askingRent
+      availableNow
+      idealLeaseTerm
+      buildingSize
+      zoning
+      buildingClass
       description
       images {
         items {

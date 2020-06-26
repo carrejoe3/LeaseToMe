@@ -184,7 +184,19 @@ export const getProperty = /* GraphQL */ `
     getProperty(id: $id) {
       id
       ownerId
+      selectedBorough
+      neighborhood
       address
+      type
+      popupRentals
+      squareFootage
+      expenseStructure
+      askingRent
+      availableNow
+      idealLeaseTerm
+      buildingSize
+      zoning
+      buildingClass
       description
       images {
         items {
@@ -211,7 +223,19 @@ export const listPropertys = /* GraphQL */ `
       items {
         id
         ownerId
+        selectedBorough
+        neighborhood
         address
+        type
+        popupRentals
+        squareFootage
+        expenseStructure
+        askingRent
+        availableNow
+        idealLeaseTerm
+        buildingSize
+        zoning
+        buildingClass
         description
         images {
           nextToken

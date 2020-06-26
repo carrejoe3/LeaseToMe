@@ -19,16 +19,28 @@ type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
   content: String!
 }
 
-type Notification @model {
+type Notification @model @aws_api_key @aws_cognito_user_pools {
   id: ID!
   userId: ID!
   body: String!
 }
 
-type Property @model {
+type Property @model @aws_api_key @aws_cognito_user_pools {
   id: ID!
   ownerId: ID!
+  selectedBorough: String!
+  neighborhood: String!
   address: String!
+  type: String!
+  popupRentals: Boolean!
+  squareFootage: String!
+  expenseStructure: String!
+  askingRent: String!
+  availableNow: Boolean!
+  idealLeaseTerm: String!
+  buildingSize: String!
+  zoning: String!
+  buildingClass: String!
   description: String!
   images: [PropertyImage] @connection(keyName: "byProperty", fields: ["id"])
 }
@@ -38,4 +50,3 @@ type PropertyImage @model @key(name: "byProperty", fields: ["propertyID"]) {
   propertyID: ID!
   imageData: String!
 }
-

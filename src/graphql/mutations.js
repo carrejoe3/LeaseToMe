@@ -309,7 +309,19 @@ export const createProperty = /* GraphQL */ `
     createProperty(input: $input, condition: $condition) {
       id
       ownerId
+      selectedBorough
+      neighborhood
       address
+      type
+      popupRentals
+      squareFootage
+      expenseStructure
+      askingRent
+      availableNow
+      idealLeaseTerm
+      buildingSize
+      zoning
+      buildingClass
       description
       images {
         items {
@@ -334,7 +346,19 @@ export const updateProperty = /* GraphQL */ `
     updateProperty(input: $input, condition: $condition) {
       id
       ownerId
+      selectedBorough
+      neighborhood
       address
+      type
+      popupRentals
+      squareFootage
+      expenseStructure
+      askingRent
+      availableNow
+      idealLeaseTerm
+      buildingSize
+      zoning
+      buildingClass
       description
       images {
         items {
@@ -359,7 +383,19 @@ export const deleteProperty = /* GraphQL */ `
     deleteProperty(input: $input, condition: $condition) {
       id
       ownerId
+      selectedBorough
+      neighborhood
       address
+      type
+      popupRentals
+      squareFootage
+      expenseStructure
+      askingRent
+      availableNow
+      idealLeaseTerm
+      buildingSize
+      zoning
+      buildingClass
       description
       images {
         items {
