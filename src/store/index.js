@@ -17,7 +17,10 @@ export default new Vuex.Store({
       neighborhood: '',
       address: '',
       type: '',
-      popupRentals: false
+      popupRentals: false,
+      squareFootage: '',
+      expenseStructure: '',
+      askingRent: ''
     }
   },
   mutations: {

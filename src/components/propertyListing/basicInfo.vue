@@ -9,11 +9,11 @@
       </div>
       <div class="d-flex align-center ma-5">
         <div class="text-h6 qLabel mr-5">What is the gross leasable square footage of the space?</div>
-        <v-text-field solo hide-details v-model="property.neighborhood"></v-text-field>
+        <v-text-field solo hide-details v-model="property.squareFootage" type="number"></v-text-field>
       </div>
       <div class="d-flex align-center ma-5">
         <div class="text-h6 qLabel mr-5">What is the asking rent?</div>
-        <v-text-field solo hide-details v-model="property.address" prepend-inner-icon="mdi-currency-usd"></v-text-field>
+        <v-text-field solo hide-details v-model="property.askingRent" prepend-inner-icon="mdi-currency-usd" type="number"></v-text-field>
       </div>
       <div class="d-flex align-center ma-5">
         <div class="text-h6 qLabel mr-5">Expense Structure</div>
@@ -85,12 +85,11 @@ export default {
         return this.$store.state.propertyListingData
       },
       set (value) {
-        console.log(value)
         this.$store.commit('setState', { property: 'propertyListingData', value: value })
       }
     },
     nextBtnEnabled () {
-      return this.property.type !== ''
+      return this.property.type !== '' && this.property.expenseStructure !== '' && this.property.askingRent !== '' && this.property.squareFootage !== ''
     }
   },
   methods: {
