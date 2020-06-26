@@ -20,7 +20,8 @@ export default new Vuex.Store({
       popupRentals: false,
       squareFootage: '',
       expenseStructure: '',
-      askingRent: ''
+      askingRent: '',
+      features: []
     }
   },
   mutations: {
