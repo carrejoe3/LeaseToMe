@@ -13,7 +13,7 @@
       </div>
       <div class="d-flex align-center ma-5">
         <div class="text-h6 qLabel mr-5">What is the asking rent?</div>
-        <v-text-field solo hide-details v-model="property.address" prepend-icon="mdi-cash-usd-outline"></v-text-field>
+        <v-text-field solo hide-details v-model="property.address" prepend-inner-icon="mdi-currency-usd"></v-text-field>
       </div>
       <div class="d-flex align-center ma-5">
         <div class="text-h6 qLabel mr-5">Expense Structure</div>
