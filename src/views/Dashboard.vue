@@ -56,7 +56,10 @@ export default {
   },
   watch: {
     user () {
-      if (this.user !== null) this.$store.dispatch('getNotifications')
+      if (this.user !== null) {
+        this.$store.dispatch('getNotifications')
+        this.$store.dispatch('getProperties')
+      }
     }
   },
   methods: {

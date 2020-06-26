@@ -56,6 +56,20 @@ export default new Vuex.Store({
         console.error(err)
       }
     },
+    async getProperties ({ commit, state }) {
+      try {
+        const properties = await API.graphql(graphqlOperation(queries.listPropertys, {
+          filter: {
+            ownerId: {
+              eq: state.user.username
+            }
+          }
+        }))
+        commit('setState', { property: 'listedProperties', value: properties.data.listPropertys.items })
+      } catch (err) {
+        console.error(err)
+      }
+    },
     async submitProperty ({ commit, state }) {
       try {
         const property = await API.graphql(graphqlOperation(mutations.createProperty, {
@@ -82,7 +96,5 @@ export default new Vuex.Store({
         console.error(err)
       }
     }
-  },
-  modules: {
   }
 })
