@@ -96,5 +96,10 @@ export default new Vuex.Store({
         console.error(err)
       }
     }
+  },
+  getters: {
+    getProperties (state) {
+      return state.listedProperties
+    }
   }
 })

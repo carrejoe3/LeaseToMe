@@ -34,6 +34,8 @@ export default {
       Auth.currentAuthenticatedUser()
         .then(user => {
           this.$store.commit('setState', { property: 'user', value: user })
+          this.$store.dispatch('getNotifications')
+          this.$store.dispatch('getProperties')
         })
         .catch(() => {
           if (this.$store.state.currentPage !== 'Home') this.$router.push('Home')
