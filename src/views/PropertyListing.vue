@@ -50,6 +50,10 @@
         <v-stepper-content step="5">
           <extraDetails />
         </v-stepper-content>
+
+        <v-stepper-content step="6">
+          <photos />
+        </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
   </v-main>
@@ -63,6 +67,7 @@ import basicInfo from '@/components/propertyListing/basicInfo'
 import keyFeatures from '@/components/propertyListing/keyFeatures'
 import description from '@/components/propertyListing/description'
 import extraDetails from '@/components/propertyListing/details'
+import photos from '@/components/propertyListing/photos'
 
 export default {
   components: {
@@ -71,7 +76,8 @@ export default {
     basicInfo,
     keyFeatures,
     description,
-    extraDetails
+    extraDetails,
+    photos
   },
   computed: {
     step: {

@@ -26,7 +26,8 @@ export default new Vuex.Store({
       idealLeaseTerm: '',
       buildingSize: '',
       zoning: '',
-      buildingClass: ''
+      buildingClass: '',
+      images: []
     }
   },
   mutations: {
