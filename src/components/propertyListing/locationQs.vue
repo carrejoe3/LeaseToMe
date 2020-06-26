@@ -3,11 +3,11 @@
     <v-card-title class="submissionTitle pt-10">Where is your property located?</v-card-title>
     <v-card-text>
       <v-btn @click="selectBorough(btn.value)" v-for="(btn, index) in locationBtns" :key="index" class="ma-4" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
-      <div class="d-flex align-center ma-5" v-if="property.selectedBorough !== null">
+      <div class="d-flex align-center ma-5 mr-16 ml-16" v-if="property.selectedBorough !== null">
         <div class="text-h6 qLabel mr-5">Neighborhood</div>
         <v-text-field solo hide-details v-model="property.neighborhood"></v-text-field>
       </div>
-      <div class="d-flex align-center ma-5" v-if="property.selectedBorough !== null">
+      <div class="d-flex align-center ma-5 mr-16 ml-16" v-if="property.selectedBorough !== null">
         <div class="text-h6 qLabel mr-5">Address</div>
         <v-text-field solo hide-details v-model="property.address"></v-text-field>
       </div>

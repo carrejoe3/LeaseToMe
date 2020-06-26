@@ -46,6 +46,10 @@
         <v-stepper-content step="4">
           <description />
         </v-stepper-content>
+
+        <v-stepper-content step="5">
+          <extraDetails />
+        </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
   </v-main>
@@ -58,6 +62,7 @@ import locationQs from '@/components/propertyListing/locationQs'
 import basicInfo from '@/components/propertyListing/basicInfo'
 import keyFeatures from '@/components/propertyListing/keyFeatures'
 import description from '@/components/propertyListing/description'
+import extraDetails from '@/components/propertyListing/details'
 
 export default {
   components: {
@@ -65,7 +70,8 @@ export default {
     locationQs,
     basicInfo,
     keyFeatures,
-    description
+    description,
+    extraDetails
   },
   computed: {
     step: {

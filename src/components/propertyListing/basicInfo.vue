@@ -5,7 +5,7 @@
       <v-btn @click="selectType(btn.value)" v-for="(btn, index) in typeBtns" :key="index" class="ma-4" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
       <div class="d-flex align-center ma-5">
         <div class="text-h6 qLabel mr-5">Are you open to pop-up rentals?</div>
-        <v-switch :v-model="property.popupRentals" :label="property.popupRentals ? 'Yes' : 'No'"></v-switch>
+        <v-switch v-model="property.popupRentals" :label="property.popupRentals ? 'Yes' : 'No'"></v-switch>
       </div>
       <div class="d-flex align-center ma-5">
         <div class="text-h6 qLabel mr-5">What is the gross leasable square footage of the space?</div>

@@ -21,7 +21,12 @@ export default new Vuex.Store({
       squareFootage: '',
       expenseStructure: '',
       askingRent: '',
-      features: []
+      features: [],
+      availableNow: true,
+      idealLeaseTerm: '',
+      buildingSize: '',
+      zoning: '',
+      buildingClass: ''
     }
   },
   mutations: {
