@@ -7,6 +7,7 @@
       <v-btn x-small text color="mainGreen">Tenant Listings</v-btn>
       <v-btn x-small text color="mainGreen">Broker Directory</v-btn>
       <v-btn x-small text color="mainGreen">How it works</v-btn>
+      <v-btn x-small text color="mainGreen" v-if="this.$store.state.user !== null" to="Dashboard">My Dashboard</v-btn>
     </v-toolbar-items>
   </v-toolbar>
 </template>
