@@ -19,13 +19,13 @@ type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
   content: String!
 }
 
-type Notification @model @aws_api_key @aws_cognito_user_pools {
+type Notification @model {
   id: ID!
   userId: ID!
   body: String!
 }
 
-type Property @model @aws_api_key @aws_cognito_user_pools {
+type Property @model {
   id: ID!
   ownerId: ID!
   selectedBorough: String!
