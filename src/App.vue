@@ -35,7 +35,14 @@ export default {
         .then(user => {
           this.$store.commit('setState', { property: 'user', value: user })
         })
-        .catch(() => console.log('User is not signed in'))
+        .catch(() => {
+          if (this.$store.state.currentPage !== 'Home') this.$router.push('Home')
+        })
+    }
+  },
+  watch: {
+    $route (to, from) {
+      this.$store.commit('setState', { property: 'currentPage', value: to.name })
     }
   },
   mounted () {
@@ -43,6 +50,8 @@ export default {
       const { payload } = data
       this.onAuthEvent(payload)
     })
+
+    this.getUser()
   }
 }
 </script>

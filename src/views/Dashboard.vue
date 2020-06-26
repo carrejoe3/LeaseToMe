@@ -61,15 +61,6 @@ export default {
         this.$store.dispatch('getProperties')
       }
     }
-  },
-  methods: {
-  },
-  mounted () {
-    this.$store.commit('setState', { property: 'currentPage', value: 'dashboard' })
   }
 }
 </script>
-
-<style scoped lang="scss">
-
-</style>

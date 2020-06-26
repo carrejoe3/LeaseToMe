@@ -21,9 +21,6 @@ export default {
   components: {
     LoginForm,
     MainNavbar
-  },
-  mounted () {
-    this.$store.commit('setState', { property: 'currentPage', value: 'login' })
   }
 }
 

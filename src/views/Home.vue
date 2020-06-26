@@ -39,7 +39,7 @@ export default {
     FooterBar
   },
   mounted () {
-    this.$store.commit('setState', { property: 'currentPage', value: 'home' })
+    this.$store.commit('setState', { property: 'currentPage', value: 'Home' })
   }
 }
 
