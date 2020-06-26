@@ -4,7 +4,7 @@
       <v-container class="ma-4">
         <div class="menuTitle">Manage Properties</div>
         <v-list nav>
-          <v-list-item link>
+          <v-list-item link to="MyProperties">
             <v-list-item-content>
               <v-list-item-title>My Listings</v-list-item-title>
             </v-list-item-content>

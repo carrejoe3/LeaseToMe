@@ -5,6 +5,7 @@ import Login from '../views/Login'
 import About from '../views/About'
 import Dashboard from '../views/Dashboard'
 import PropertyListing from '../views/PropertyListing'
+import MyProperties from '../views/MyProperties'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/propertyListing',
     name: 'PropertyListing',
     component: PropertyListing
+  },
+  {
+    path: '/myProperties',
+    name: 'MyProperties',
+    component: MyProperties
   }
 ]
 
