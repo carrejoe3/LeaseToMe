@@ -1,5 +1,5 @@
 <template>
-  <v-card color="lightGrey" width="800" class="mx-auto ma-5" id="basicInfo" flat>
+  <v-card color="lightGrey" width="800" class="mx-auto ma-5 pa-5" id="basicInfo" flat>
     <v-card-title class="submissionTitle pt-10">How would you categorize the space?</v-card-title>
     <v-card-text>
       <v-btn @click="selectType(btn.value)" v-for="(btn, index) in typeBtns" :key="index" class="ma-4" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>

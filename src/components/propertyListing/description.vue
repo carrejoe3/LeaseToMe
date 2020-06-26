@@ -1,5 +1,5 @@
 <template>
-  <v-card color="lightGrey" width="800" class="mx-auto ma-5" id="description" flat>
+  <v-card color="lightGrey" width="800" class="mx-auto ma-5 pa-5" id="description" flat>
     <v-card-title class="submissionTitle pt-10">Tell us what makes your property great.</v-card-title>
     <v-card-text>
       <v-textarea solo name="input-7-4" label="Leave your property description here..." v-model="property.description"></v-textarea>

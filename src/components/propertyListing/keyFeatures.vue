@@ -1,5 +1,5 @@
 <template>
-  <v-card color="lightGrey" width="800" class="mx-auto ma-5" id="keyFeatures" flat>
+  <v-card color="lightGrey" width="800" class="mx-auto ma-5 pa-5" id="keyFeatures" flat>
     <v-card-title class="submissionTitle pt-10">What are three important features that help your space stand out?</v-card-title>
     <v-card-text>
       <v-chip-group column multiple max="3" v-model="property.features" active-class="activeFeature">
