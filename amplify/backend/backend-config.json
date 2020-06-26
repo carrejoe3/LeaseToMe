@@ -1,5 +1,21 @@
 {
-	"api": {},
+	"api": {
+		"leasetome": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authleasetome34b04632"
+						}
+					}
+				}
+			}
+		}
+	},
 	"auth": {
 		"leasetome34b04632": {
 			"service": "Cognito",
