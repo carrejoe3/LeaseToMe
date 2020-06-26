@@ -2,14 +2,13 @@
   <v-card color="lightGrey" width="800" class="mx-auto ma-5" id="keyFeatures" flat>
     <v-card-title class="submissionTitle pt-10">What are three important features that help your space stand out?</v-card-title>
     <v-card-text>
-      <v-chip-group column>
-        <v-chip v-for="(feature, index) in features" :key="index" @click="selectFeature(feature)" :color="feature.active ? 'primary' : ''">{{ feature.title }}</v-chip>
-        <v-chip>Create Your Own</v-chip>
+      <v-chip-group column multiple max="3" v-model="property.features" active-class="activeFeature">
+        <v-chip v-for="(feature, index) in features" :key="index">{{ feature.title }}</v-chip>
       </v-chip-group>
     </v-card-text>
     <v-card-actions>
       <div style="width: 100%;">
-        <v-btn x-large color="primary" class="mb-5 mr-2" @click="step--">
+        <v-btn x-large color="primary" class="mb-5 mr-2" @click="step--;">
           Back
           <v-icon>mdi-arrow-left</v-icon>
         </v-btn>
@@ -81,19 +80,6 @@ export default {
     nextBtnEnabled () {
       return true
     }
-  },
-  methods: {
-    selectFeature (feature) {
-      if (this.property.features.indexOf(feature) === -1) {
-        this.property.features.push(feature)
-        this.features.find(obj => obj.value === feature.value).active = true
-      } else {
-        this.features.find(obj => obj.value === feature.value).active = false
-        this.property.features = this.property.features.filter(obj => {
-          return obj !== feature
-        })
-      }
-    }
   }
 }
 
@@ -102,5 +88,10 @@ export default {
 <style lang="scss" scoped>
 #keyFeatures {
   text-align: center;
+
+  .activeFeature {
+    color: $accent;
+    background-color: $primary;
+  }
 }
 </style>
