@@ -4,8 +4,9 @@
     <v-toolbar-title id="title" @click="navToHome">LeaseToMe</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn x-small text color="mainGreen">Tenant Listings</v-btn>
-      <v-btn x-small text color="mainGreen">Broker Directory</v-btn>
+      <v-btn x-small text color="mainGreen">Find Tenants</v-btn>
+      <v-btn x-small text color="mainGreen">Find Spaces</v-btn>
+      <v-btn x-small text color="mainGreen">Find Brokers</v-btn>
       <v-btn x-small text color="mainGreen">How it works</v-btn>
       <v-btn x-small text color="mainGreen" v-if="this.$store.state.user !== null" to="Dashboard">My Dashboard</v-btn>
     </v-toolbar-items>
