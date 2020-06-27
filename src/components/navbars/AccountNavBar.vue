@@ -14,9 +14,6 @@ import { Auth } from 'aws-amplify'
 
 export default {
   name: 'AccountNavBar',
-  props: {
-    msg: String
-  },
   computed: {
     loggedIn () {
       return this.$store.state.user !== null
