@@ -2,9 +2,9 @@
   <v-container id="propertyCards" fluid>
     <v-row>
       <v-col cols="4" v-for="property in properties" :key="property.id">
-        <v-card @click="showPropertyPopup(object.id)" ripple>
-          <v-img src="">
-            <v-btn @click.stop="toggleFavourite(object.id)" absolute fab x-small right top class="mt-6 mr-n1">
+        <v-card @click="showPropertyPopup(property.id)" ripple>
+          <v-img :src="property.images[0].imageSrc" :aspect-ratio="4/3">
+            <v-btn @click.stop="toggleFavourite(property.id)" absolute fab x-small right top class="mt-6 mr-n1">
               <v-icon>mdi-heart</v-icon>
             </v-btn>
             <template v-slot:placeholder>

@@ -49,9 +49,12 @@ export default new Vuex.Store({
         zoning: 'Euclidean',
         buildingClass: 'a5',
         description: 'This is a property.',
-        images: {
-          nextToken: null
-        },
+        images: [
+          {
+            id: '0',
+            imageSrc: 'img/propertyImages/statenIsland1.jpg'
+          }
+        ],
         createdAt: '2020-06-26T17:14:54.907Z',
         updatedAt: '2020-06-26T17:14:54.907Z'
       }, {
@@ -71,9 +74,12 @@ export default new Vuex.Store({
         zoning: 'Euclidean',
         buildingClass: 'b3',
         description: 'This is a property.',
-        images: {
-          nextToken: null
-        },
+        images: [
+          {
+            id: '0',
+            imageSrc: 'img/propertyImages/queensWoolside.jpg'
+          }
+        ],
         createdAt: '2020-06-26T17:16:09.859Z',
         updatedAt: '2020-06-26T17:16:09.859Z'
       }, {
@@ -93,9 +99,12 @@ export default new Vuex.Store({
         zoning: 'Euclidean',
         buildingClass: 'b1',
         description: 'This is a property.',
-        images: {
-          nextToken: null
-        },
+        images: [
+          {
+            id: '0',
+            imageSrc: 'img/propertyImages/brooklyn-long-island-bar.jpeg'
+          }
+        ],
         createdAt: '2020-06-26T17:10:05.034Z',
         updatedAt: '2020-06-26T17:10:05.034Z'
       }
