@@ -1,12 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home'
-import Login from '../views/Login'
-import About from '../views/About'
-import Dashboard from '../views/Dashboard'
-import PropertyListing from '../views/PropertyListing'
-import MyProperties from '../views/MyProperties'
-import FindSpaces from '../views/FindSpaces'
 
 Vue.use(VueRouter)
 
@@ -14,37 +7,37 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home')
   },
   {
     path: '/',
     name: 'Login',
-    component: Login
+    component: () => import(/* webpackChunkName: "home" */ '../views/Login')
   },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: () => import(/* webpackChunkName: "home" */ '../views/About')
   },
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard
+    component: () => import(/* webpackChunkName: "home" */ '../views/Dashboard')
   },
   {
     path: '/propertyListing',
     name: 'PropertyListing',
-    component: PropertyListing
+    component: () => import(/* webpackChunkName: "home" */ '../views/PropertyListing')
   },
   {
     path: '/myProperties',
     name: 'MyProperties',
-    component: MyProperties
+    component: () => import(/* webpackChunkName: "home" */ '../views/MyProperties')
   },
   {
     path: '/findSpaces',
     name: 'FindSpaces',
-    component: FindSpaces
+    component: () => import(/* webpackChunkName: "home" */ '../views/FindSpaces')
   }
 ]
 
