@@ -5,7 +5,7 @@
     <v-spacer></v-spacer>
     <v-toolbar-items>
       <v-btn x-small text color="mainGreen">Find Tenants</v-btn>
-      <v-btn x-small text color="mainGreen">Find Spaces</v-btn>
+      <v-btn x-small text color="mainGreen" to="FindSpaces">Find Spaces</v-btn>
       <v-btn x-small text color="mainGreen">Find Brokers</v-btn>
       <v-btn x-small text color="mainGreen">How it works</v-btn>
       <v-btn x-small text color="mainGreen" v-if="this.$store.state.user !== null" to="Dashboard">My Dashboard</v-btn>

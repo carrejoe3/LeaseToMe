@@ -6,6 +6,7 @@ import About from '../views/About'
 import Dashboard from '../views/Dashboard'
 import PropertyListing from '../views/PropertyListing'
 import MyProperties from '../views/MyProperties'
+import FindSpaces from '../views/FindSpaces'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/myProperties',
     name: 'MyProperties',
     component: MyProperties
+  },
+  {
+    path: '/findSpaces',
+    name: 'FindSpaces',
+    component: FindSpaces
   }
 ]
 
