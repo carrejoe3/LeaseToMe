@@ -31,7 +31,75 @@ export default new Vuex.Store({
       description: '',
       images: []
     },
-    listedProperties: []
+    listedProperties: [
+      {
+        id: 'f58b8f96-b037-434d-99cf-c45ac8c4b48d',
+        ownerId: 'ee30f9c5-47ff-4596-833d-2454045cca26',
+        selectedBorough: 'brooklyn',
+        neighborhood: 'd',
+        address: 'd',
+        type: 'generalRetail',
+        popupRentals: true,
+        squareFootage: '3',
+        expenseStructure: 'gross',
+        askingRent: '333',
+        availableNow: true,
+        idealLeaseTerm: '3-5',
+        buildingSize: '3',
+        zoning: '3',
+        buildingClass: '3',
+        description: 'eeee',
+        images: {
+          nextToken: null
+        },
+        createdAt: '2020-06-26T17:14:54.907Z',
+        updatedAt: '2020-06-26T17:14:54.907Z'
+      }, {
+        id: '6aeef512-8517-447a-8e6e-d280376257e0',
+        ownerId: 'ee30f9c5-47ff-4596-833d-2454045cca26',
+        selectedBorough: 'queens',
+        neighborhood: 'e',
+        address: '',
+        type: '',
+        popupRentals: false,
+        squareFootage: '3',
+        expenseStructure: 'mg',
+        askingRent: '',
+        availableNow: true,
+        idealLeaseTerm: '6-9',
+        buildingSize: '',
+        zoning: '',
+        buildingClass: '',
+        description: 'e',
+        images: {
+          nextToken: null
+        },
+        createdAt: '2020-06-26T17:16:09.859Z',
+        updatedAt: '2020-06-26T17:16:09.859Z'
+      }, {
+        id: 'a5221a6d-1233-4837-aa15-0231e132ec73',
+        ownerId: 'ee30f9c5-47ff-4596-833d-2454045cca26',
+        selectedBorough: 'brooklyn',
+        neighborhood: '',
+        address: '',
+        type: 'generalRetail',
+        popupRentals: false,
+        squareFootage: '',
+        expenseStructure: '',
+        askingRent: '',
+        availableNow: true,
+        idealLeaseTerm: '10+',
+        buildingSize: '',
+        zoning: '',
+        buildingClass: '',
+        description: '',
+        images: {
+          nextToken: null
+        },
+        createdAt: '2020-06-26T17:10:05.034Z',
+        updatedAt: '2020-06-26T17:10:05.034Z'
+      }
+    ]
   },
   mutations: {
     setState (state, payload) {
