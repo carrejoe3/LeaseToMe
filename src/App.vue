@@ -53,7 +53,7 @@ export default {
       this.onAuthEvent(payload)
     })
 
-    this.getUser()
+    // this.getUser()
   }
 }
 </script>
