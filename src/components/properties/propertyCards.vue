@@ -4,7 +4,7 @@
       <v-col cols="4" v-for="property in properties" :key="property.id">
         <v-card @click="showPropertyPopup(property.id)" ripple>
           <v-img :src="property.images[0].imageSrc" :aspect-ratio="4/3">
-            <v-btn @click.stop="toggleFavourite(property.id)" color="accent" absolute icon x-large right top class="mr-n1">
+            <v-btn @click.stop="toggleFavourite(property.id)" color="accent" absolute icon x-large right top class="mr-n1" v-if="showFavBtn">
               <v-icon>mdi-heart-outline</v-icon>
             </v-btn>
             <template v-slot:placeholder>
@@ -17,6 +17,9 @@
             <v-icon class="mr-1" color="darkGreen">mdi-compass-outline</v-icon>
             {{ property.neighborhood }} | {{ property.squareFootage }} SF
           </v-card-title>
+          <v-card-subtitle>
+            {{ property.address }}
+          </v-card-subtitle>
         </v-card>
       </v-col>
     </v-row>
@@ -29,6 +32,9 @@ export default {
   computed: {
     properties () {
       return this.$store.getters.getProperties
+    },
+    showFavBtn () {
+      return this.$store.state.currentPage !== 'MyProperties'
     }
   },
   methods: {
