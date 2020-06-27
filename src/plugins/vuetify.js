@@ -11,6 +11,7 @@ export default new Vuetify({
         secondary: '#C6E1D7',
         mainGreen: '#02883f',
         lightGreen: '#37AA49',
+        darkGreen: '#20562d',
         lightGrey: '#F3F3F3',
         darkGrey: '#54595F',
         accent: '#ffffff',

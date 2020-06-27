@@ -4,8 +4,8 @@
       <v-col cols="4" v-for="property in properties" :key="property.id">
         <v-card @click="showPropertyPopup(property.id)" ripple>
           <v-img :src="property.images[0].imageSrc" :aspect-ratio="4/3">
-            <v-btn @click.stop="toggleFavourite(property.id)" absolute fab x-small right top class="mt-6 mr-n1">
-              <v-icon>mdi-heart</v-icon>
+            <v-btn @click.stop="toggleFavourite(property.id)" color="accent" absolute icon x-large right top class="mr-n1">
+              <v-icon>mdi-heart-outline</v-icon>
             </v-btn>
             <template v-slot:placeholder>
               <v-row class="fill-height ma-0" align="center" justify="center">
@@ -13,7 +13,10 @@
               </v-row>
             </template>
           </v-img>
-          <v-card-title>{{ property.address }}</v-card-title>
+          <v-card-title class="propertyTitle">
+            <v-icon class="mr-1" color="darkGreen">mdi-compass-outline</v-icon>
+            {{ property.neighborhood }} | {{ property.squareFootage }} SF
+          </v-card-title>
         </v-card>
       </v-col>
     </v-row>
@@ -46,6 +49,10 @@ export default {
   -ms-overflow-style: none;
   padding-top: 0px;
   margin-top: 14px;
+
+  .propertyTitle {
+    color: $primary;
+  }
 }
 
 #propertyCards::-webkit-scrollbar {
