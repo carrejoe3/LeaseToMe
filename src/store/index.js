@@ -177,7 +177,16 @@ export default new Vuex.Store({
   },
   getters: {
     getProperties (state) {
-      return state.listedProperties
+      switch (state.currentPage) {
+        case 'FindSpaces':
+          if (state.idealLocationFilter !== 'All') {
+            return state.listedProperties.filter(obj => obj.selectedBorough === state.idealLocationFilter)
+          } else {
+            return state.listedProperties
+          }
+        default:
+          return state.listedProperties
+      }
     }
   }
 })
