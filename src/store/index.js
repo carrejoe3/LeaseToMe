@@ -109,7 +109,7 @@ export default new Vuex.Store({
         updatedAt: '2020-06-26T17:10:05.034Z'
       }
     ],
-    idealLocationFilter: null
+    idealLocationFilter: 'All'
   },
   mutations: {
     setState (state, payload) {
