@@ -117,6 +117,9 @@ export default new Vuex.Store({
     },
     pushToState (state, payload) {
       state[payload.property].push(payload.value)
+    },
+    addImgToPropertyListing (state, payload) {
+      state.propertyListingData.images.push(payload)
     }
   },
   actions: {
