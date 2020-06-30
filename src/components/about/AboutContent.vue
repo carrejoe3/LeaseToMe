@@ -47,12 +47,12 @@
           </v-list-item>
         </v-card>
       </div>
-      <div id="footer"></div>
     </v-col>
   </v-row>
 </template>
 
 <script>
+
 export default {
   name: 'AboutContent'
 }
@@ -133,10 +133,5 @@ div .col {
       font-weight: 450;
     }
   }
-}
-
-#footer {
-  height: 30%;
-  background-color: #406b44;
 }
 </style>
