@@ -118,7 +118,7 @@ export default {
       landlords: [
         {
           title: 'Sign Up',
-          navTo: 'About'
+          navTo: 'Login'
         },
         {
           title: 'How It Works',
@@ -140,7 +140,7 @@ export default {
       brokers: [
         {
           title: 'Sign Up',
-          navTo: 'About'
+          navTo: 'Login'
         },
         {
           title: 'How It Works',
