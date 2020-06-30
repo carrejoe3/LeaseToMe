@@ -31,7 +31,7 @@
           </div>
         </v-col>
         <v-col xs="6" sm="3" md="2" lg="2">
-          <v-list color="primary" dark dense>
+          <v-list color="primary" dark dense nav>
             <v-list-item-title>TENANTS</v-list-item-title>
             <v-list-item-group>
               <v-list-item v-for="(item, i) in tenants" :key="i" :to="item.navTo">
@@ -43,7 +43,7 @@
           </v-list>
         </v-col>
         <v-col xs="6" sm="3" md="2" lg="2">
-          <v-list color="primary" dark dense>
+          <v-list color="primary" dark dense nav>
             <v-list-item-title>LANDLORDS</v-list-item-title>
             <v-list-item-group>
               <v-list-item v-for="(item, i) in landlords" :key="i" :to="item.navTo">
@@ -55,7 +55,7 @@
           </v-list>
         </v-col>
         <v-col xs="6" sm="3" md="2" lg="2">
-          <v-list color="primary" dark dense>
+          <v-list color="primary" dark dense nav>
             <v-list-item-title>BROKERS</v-list-item-title>
             <v-list-item-group>
               <v-list-item v-for="(item, i) in brokers" :key="i" :to="item.navTo">
@@ -67,7 +67,7 @@
           </v-list>
         </v-col>
         <v-col xs="6" sm="3" md="2" lg="2">
-          <v-list color="primary" dark dense>
+          <v-list color="primary" dark dense nav>
             <v-list-item-title>COMPANY</v-list-item-title>
             <v-list-item-group>
               <v-list-item v-for="(item, i) in company" :key="i" :to="item.navTo">
@@ -104,7 +104,7 @@ export default {
         },
         {
           title: 'Find Spaces',
-          navTo: 'About'
+          navTo: 'FindSpaces'
         },
         {
           title: 'Find Brokers',
@@ -160,7 +160,7 @@ export default {
         },
         {
           title: 'Find Spaces',
-          navTo: 'About'
+          navTo: 'FindSpaces'
         },
         {
           title: 'Broker Directory',
