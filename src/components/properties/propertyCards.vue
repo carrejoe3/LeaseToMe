@@ -34,7 +34,7 @@ export default {
       return this.$store.getters.getProperties
     },
     showFavBtn () {
-      return this.$store.state.currentPage !== 'MyProperties'
+      return this.$store.state.currentPage !== 'MyProperties' && this.$store.state.user !== null
     }
   },
   methods: {
