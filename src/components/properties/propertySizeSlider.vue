@@ -16,10 +16,9 @@
 export default {
   data () {
     return {
-      min: -50,
-      max: 90,
-      slider: 40,
-      range: [-20, 70]
+      min: 1,
+      max: 99999,
+      range: [1, 99999]
     }
   },
   computed: {
