@@ -7,6 +7,9 @@
             <v-btn @click.stop="toggleFavourite(property.id)" color="accent" absolute icon x-large right top class="mr-n1" v-if="showFavBtn">
               <v-icon>mdi-heart-outline</v-icon>
             </v-btn>
+            <v-btn color="primary" absolute x-small right bottom v-if="property.availableNow">
+              Available Now!
+            </v-btn>
             <template v-slot:placeholder>
               <v-row class="fill-height ma-0" align="center" justify="center">
                 <v-progress-circular indeterminate color="secondary"></v-progress-circular>
