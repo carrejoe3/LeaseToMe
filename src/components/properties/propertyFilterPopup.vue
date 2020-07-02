@@ -12,22 +12,16 @@
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-toolbar>
-        <v-card-text>
-          <div class="d-inline text-left mt-8">
+        <v-card-text class="pt-5">
+          <div class="d-inline mt-8">
             <div class="text-h6 qLabel">Type</div>
-            <v-btn
-              @click="selectType(btn.value)"
-              v-for="(btn, index) in typeBtns"
-              :key="index"
-              class="ma-4"
-              :color="btn.active ? 'primary' : 'lightGrey'"
-            >{{ btn.title }}</v-btn>
+            <v-btn @click="selectType(btn.value)" v-for="(btn, index) in typeBtns" :key="index" class="ma-4" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
           </div>
-          <div class="d-flex align-center mt-8" style="width: 100%;">
-            <propertySizeSlider />
-          </div>
-          <div class="d-flex align-center mt-8">
-            <propertyPriceFilter />
+          <propertySizeSlider />
+          <propertyPriceFilter />
+          <div class="d-flex mt-2 align-center">
+            <div class="text-h6 mr-3 qLabel">Available now</div>
+            <v-switch v-model="filters.availableNow"></v-switch>
           </div>
         </v-card-text>
       </v-card>

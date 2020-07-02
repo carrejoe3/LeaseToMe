@@ -1,28 +1,12 @@
 <template>
-  <div style="width: 100%;">
+  <div class="mt-8">
     <div class="text-h6 qLabel">Size (SF)</div>
-    <v-range-slider v-model="filters.propertySizeRange" :max="max" :min="min" hide-details class="align-center" style="width: 100%;">
+    <v-range-slider v-model="filters.propertySizeRange" :max="max" :min="min" hide-details class="align-center">
       <template v-slot:prepend>
-        <v-text-field
-          :value="range[0]"
-          class="mt-0 pt-0"
-          hide-details
-          single-line
-          type="number"
-          style="width: 60px"
-          @change="$set(range, 0, $event)"
-        ></v-text-field>
+        <v-text-field :value="range[0]" class="mt-0 pt-0" hide-details single-line type="number" style="width: 60px" @change="$set(range, 0, $event)"></v-text-field>
       </template>
       <template v-slot:append>
-        <v-text-field
-          :value="range[1]"
-          class="mt-0 pt-0"
-          hide-details
-          single-line
-          type="number"
-          style="width: 60px"
-          @change="$set(range, 1, $event)"
-        ></v-text-field>
+        <v-text-field :value="range[1]" class="mt-0 pt-0" hide-details single-line type="number" style="width: 60px" @change="$set(range, 1, $event)"></v-text-field>
       </template>
     </v-range-slider>
   </div>

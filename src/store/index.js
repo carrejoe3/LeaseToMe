@@ -112,7 +112,8 @@ export default new Vuex.Store({
     findSpaceFilters: {
       idealLocationFilter: 'All',
       spaceType: '',
-      propertySizeRange: [0, 20]
+      propertySizeRange: [0, 20],
+      availableNow: true
     }
   },
   mutations: {
