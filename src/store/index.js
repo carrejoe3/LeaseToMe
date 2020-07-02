@@ -109,7 +109,11 @@ export default new Vuex.Store({
         updatedAt: '2020-06-26T17:10:05.034Z'
       }
     ],
-    idealLocationFilter: 'All'
+    findSpaceFilters: {
+      idealLocationFilter: 'All',
+      spaceType: '',
+      propertySizeRange: [0, 20]
+    }
   },
   mutations: {
     setState (state, payload) {
@@ -182,8 +186,8 @@ export default new Vuex.Store({
     getProperties (state) {
       switch (state.currentPage) {
         case 'FindSpaces':
-          if (state.idealLocationFilter !== 'All') {
-            return state.listedProperties.filter(obj => obj.selectedBorough === state.idealLocationFilter)
+          if (state.findSpaceFilters.idealLocationFilter !== 'All') {
+            return state.listedProperties.filter(obj => obj.selectedBorough === state.findSpaceFilters.idealLocationFilter)
           } else {
             return state.listedProperties
           }

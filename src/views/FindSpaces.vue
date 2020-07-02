@@ -3,6 +3,7 @@
     <MainNavbar />
     <banner />
     <idealLocationFilter />
+    <propertyFilterPopup />
     <propertyCards />
   </v-main>
 </template>
@@ -14,6 +15,7 @@ import MainNavbar from '@/components/navbars/MainNavbar'
 import banner from '@/components/properties/findSpacesBanner'
 import idealLocationFilter from '@/components/properties/idealLocationFilter'
 import propertyCards from '@/components/properties/propertyCards'
+import propertyFilterPopup from '@/components/properties/propertyFilterPopup'
 
 export default {
   name: 'findSpaces',
@@ -21,7 +23,8 @@ export default {
     MainNavbar,
     banner,
     idealLocationFilter,
-    propertyCards
+    propertyCards,
+    propertyFilterPopup
   }
 }
 

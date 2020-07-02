@@ -1,7 +1,7 @@
 <template>
   <v-container id="idealLocationFilter" fluid>
     <v-container>
-      <div id="filterTitle" class="mt-3 text-h5">What's the ideal location or your business?</div>
+      <div id="filterTitle" class="mt-3 text-h5">What's the ideal location for your business?</div>
       <v-btn @click="selectLocation(btn)" class="ma-2 mt-5" v-for="(btn, index) in filterOptions" :key="index" :color="btn.active ? 'primary' : ''">{{ btn.value }}</v-btn>
     </v-container>
   </v-container>
@@ -42,18 +42,18 @@ export default {
     }
   },
   computed: {
-    idealLocationFilter: {
+    filters: {
       get () {
-        return this.$store.state.idealLocationFilter
+        return this.$store.state.findSpaceFilters
       },
       set (value) {
-        this.$store.commit('setState', { property: 'idealLocationFilter', value: value })
+        this.$store.commit('setState', { property: 'findSpaceFilters', value: value })
       }
     }
   },
   methods: {
     selectLocation (filter) {
-      this.idealLocationFilter = filter.value
+      this.filters.idealLocationFilter = filter.value
 
       for (const i in this.filterOptions) {
         this.filterOptions[i].active = false
