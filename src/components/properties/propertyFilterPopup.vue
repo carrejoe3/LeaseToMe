@@ -15,7 +15,7 @@
         <v-card-text class="pt-5">
           <div class="d-inline mt-8">
             <div class="text-h6 qLabel">Type</div>
-            <v-btn @click="selectType(btn.value)" v-for="(btn, index) in typeBtns" :key="index" class="ma-4" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
+            <v-btn @click="selectType(btn.value)" v-for="(btn, index) in typeBtns" :key="index" class="ma-2" :color="btn.active ? 'primary' : 'lightGrey'">{{ btn.title }}</v-btn>
           </div>
           <propertySizeSlider />
           <propertyPriceFilter />
@@ -41,18 +41,23 @@ export default {
       typeBtns: [
         {
           title: 'RESTAURANT',
-          value: 'restaurant',
+          value: 'Restaurant',
           active: false
         },
         {
           title: 'GENERAL RETAIL',
-          value: 'generalRetail',
+          value: 'General Retail',
           active: false
         },
         {
           title: 'POP-UP',
-          value: 'popup',
+          value: 'Pop-up',
           active: false
+        },
+        {
+          title: 'ALL',
+          value: 'All',
+          active: true
         }
       ]
     }
