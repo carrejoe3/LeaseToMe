@@ -185,15 +185,19 @@ export default new Vuex.Store({
   },
   getters: {
     getProperties (state) {
+      let filteredProperties = state.listedProperties
+
       switch (state.currentPage) {
         case 'FindSpaces':
           if (state.findSpaceFilters.idealLocationFilter !== 'All') {
-            return state.listedProperties.filter(obj => obj.selectedBorough === state.findSpaceFilters.idealLocationFilter)
-          } else {
-            return state.listedProperties
+            filteredProperties = filteredProperties.filter(obj => obj.selectedBorough === state.findSpaceFilters.idealLocationFilter)
           }
+
+          filteredProperties = filteredProperties.filter(obj => obj.availableNow === state.findSpaceFilters.availableNow)
+
+          return filteredProperties
         default:
-          return state.listedProperties
+          return filteredProperties
       }
     }
   }
