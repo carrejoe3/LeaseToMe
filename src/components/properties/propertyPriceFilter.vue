@@ -1,11 +1,14 @@
 <template>
-  <div class="mt-10">
+  <div class="mt-8">
     <div class="text-h6 qLabel">Price</div>
-    <v-slider v-model="slider" class="align-center" :max="max" :min="min" hide-details>
-      <template v-slot:append>
-        <v-text-field v-model="slider" class="mt-0 pt-0" hide-details single-line type="number" style="width: 60px"></v-text-field>
+    <v-range-slider v-model="filters.propertyPriceRange" :max="max" :min="min" hide-details class="align-center">
+      <template v-slot:prepend>
+        <v-text-field :value="filters.propertyPriceRange[0]" class="mt-0 pt-0" hide-details single-line type="number" style="width: 60px" @change="$set(range, 0, $event)"></v-text-field>
       </template>
-    </v-slider>
+      <template v-slot:append>
+        <v-text-field :value="filters.propertyPriceRange[1]" class="mt-0 pt-0" hide-details single-line type="number" style="width: 60px" @change="$set(range, 1, $event)"></v-text-field>
+      </template>
+    </v-range-slider>
   </div>
 </template>
 
@@ -15,8 +18,17 @@ export default {
     return {
       min: -50,
       max: 90,
-      slider: 40,
       range: [-20, 70]
+    }
+  },
+  computed: {
+    filters: {
+      get () {
+        return this.$store.state.findSpaceFilters
+      },
+      set (value) {
+        this.$store.commit('setState', { property: 'findSpaceFilters', value: value })
+      }
     }
   }
 }

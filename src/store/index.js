@@ -113,6 +113,7 @@ export default new Vuex.Store({
       idealLocationFilter: 'All',
       spaceType: 'All',
       propertySizeRange: [0, 20],
+      propertyPriceRange: [0, 20],
       availableNow: true
     }
   },
