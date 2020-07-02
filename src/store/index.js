@@ -113,7 +113,7 @@ export default new Vuex.Store({
       idealLocationFilter: 'All',
       spaceType: 'All',
       propertySizeRange: [0, 20],
-      propertyPriceRange: [0, 20],
+      propertyPriceRange: [1, 99999],
       availableNow: true
     }
   },
@@ -199,6 +199,10 @@ export default new Vuex.Store({
           if (state.findSpaceFilters.spaceType !== 'All') {
             filteredProperties = filteredProperties.filter(obj => obj.type === state.findSpaceFilters.spaceType)
           }
+
+          filteredProperties = filteredProperties.filter(obj => obj.askingRent >= state.findSpaceFilters.propertyPriceRange[0])
+
+          filteredProperties = filteredProperties.filter(obj => obj.askingRent <= state.findSpaceFilters.propertyPriceRange[1])
 
           return filteredProperties
         default:
