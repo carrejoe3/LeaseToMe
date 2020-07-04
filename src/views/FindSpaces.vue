@@ -4,6 +4,13 @@
     <banner />
     <idealLocationFilter />
     <propertyFilterPopup />
+    <v-container fluid class="mt-10">
+      <v-row no-gutters>
+        <v-col cols="3">
+          <sortDropdown />
+        </v-col>
+      </v-row>
+    </v-container>
     <propertyCards />
   </v-main>
 </template>
@@ -14,6 +21,7 @@
 import MainNavbar from '@/components/navbars/MainNavbar'
 import banner from '@/components/properties/findSpacesBanner'
 import idealLocationFilter from '@/components/properties/idealLocationFilter'
+import sortDropdown from '@/components/properties/sortDropdown'
 import propertyCards from '@/components/properties/propertyCards'
 import propertyFilterPopup from '@/components/properties/propertyFilterPopup'
 
@@ -23,6 +31,7 @@ export default {
     MainNavbar,
     banner,
     idealLocationFilter,
+    sortDropdown,
     propertyCards,
     propertyFilterPopup
   }

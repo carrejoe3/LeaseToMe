@@ -1,6 +1,6 @@
 <template>
-  <v-row justify="center" class="mt-10" id="propertyFilterPopup">
-    <v-dialog v-model="dialog" persistent width="600">
+  <v-row justify="center" id="propertyFilterPopup">
+    <v-dialog v-model="dialog" width="600">
       <template v-slot:activator="{ on, attrs }">
         <v-btn color="primary" dark v-bind="attrs" v-on="on" text>Advanced search</v-btn>
       </template>
