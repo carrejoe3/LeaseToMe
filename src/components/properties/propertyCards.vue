@@ -1,32 +1,30 @@
 <template>
-  <v-container id="propertyCards" fluid>
-    <v-row>
-      <v-col cols="4" v-for="property in properties" :key="property.id">
-        <v-card @click="showPropertyPopup(property.id)" ripple>
-          <v-img :src="property.images[0].imageSrc" :aspect-ratio="4/3">
-            <v-btn @click.stop="toggleFavourite(property.id)" color="accent" absolute icon x-large right top class="mr-n1" v-if="showFavBtn">
-              <v-icon>mdi-heart-outline</v-icon>
-            </v-btn>
-            <v-btn color="primary" absolute x-small right bottom v-if="property.availableNow && $store.state.currentPage !== 'MyProperties'">
-              Available Now!
-            </v-btn>
-            <template v-slot:placeholder>
-              <v-row class="fill-height ma-0" align="center" justify="center">
-                <v-progress-circular indeterminate color="secondary"></v-progress-circular>
-              </v-row>
-            </template>
-          </v-img>
-          <v-card-title class="propertyTitle">
-            <v-icon class="mr-1" color="darkGreen">mdi-compass-outline</v-icon>
-            {{ property.neighborhood }} | {{ property.squareFootage }} SF
-          </v-card-title>
-          <v-card-subtitle>
-            {{ property.address }}
-          </v-card-subtitle>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-row id="propertyCards">
+    <v-col cols="4" v-for="property in properties" :key="property.id">
+      <v-card @click="showPropertyPopup(property.id)" ripple>
+        <v-img :src="property.images[0].imageSrc" :aspect-ratio="4/3">
+          <v-btn @click.stop="toggleFavourite(property.id)" color="accent" absolute icon x-large right top class="mr-n1" v-if="showFavBtn">
+            <v-icon>mdi-heart-outline</v-icon>
+          </v-btn>
+          <v-btn color="primary" absolute x-small right bottom v-if="property.availableNow && $store.state.currentPage !== 'MyProperties'">
+            Available Now!
+          </v-btn>
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular indeterminate color="secondary"></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
+        <v-card-title class="propertyTitle">
+          <v-icon class="mr-1" color="darkGreen">mdi-compass-outline</v-icon>
+          {{ property.neighborhood }} | {{ property.squareFootage }} SF
+        </v-card-title>
+        <v-card-subtitle>
+          {{ property.address }}
+        </v-card-subtitle>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

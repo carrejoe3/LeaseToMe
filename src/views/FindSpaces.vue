@@ -4,14 +4,14 @@
     <banner />
     <idealLocationFilter />
     <propertyFilterPopup />
-    <v-container fluid class="mt-10">
+    <v-container class="mt-10">
       <v-row no-gutters>
         <v-col cols="3">
           <sortDropdown />
         </v-col>
       </v-row>
+      <propertyCards />
     </v-container>
-    <propertyCards />
   </v-main>
 </template>
 
