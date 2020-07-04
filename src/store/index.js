@@ -115,7 +115,8 @@ export default new Vuex.Store({
       propertySizeRange: [1, 99999],
       propertyPriceRange: [1, 99999],
       availableNow: true
-    }
+    },
+    spacesSortType: null
   },
   mutations: {
     setState (state, payload) {
@@ -205,6 +206,25 @@ export default new Vuex.Store({
 
           filteredProperties = filteredProperties.filter(obj => obj.squareFootage >= state.findSpaceFilters.propertySizeRange[0])
           filteredProperties = filteredProperties.filter(obj => obj.squareFootage <= state.findSpaceFilters.propertySizeRange[1])
+
+          if (state.spacesSortType !== null) {
+            switch (state.spacesSortType) {
+              case 'Lowest Price':
+                filteredProperties.sort((a, b) => a.askingRent - b.askingRent)
+                break
+              case 'Highest Price':
+                filteredProperties.sort((a, b) => b.askingRent - a.askingRent)
+                break
+              case 'Smallest (SF)':
+                filteredProperties.sort((a, b) => a.squareFootage - b.squareFootage)
+                break
+              case 'Biggest (SF)':
+                filteredProperties.sort((a, b) => b.squareFootage - a.squareFootage)
+                break
+              default:
+                break
+            }
+          }
 
           return filteredProperties
         default:
