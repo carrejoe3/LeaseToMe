@@ -10,7 +10,7 @@
 <script>
 
 export default {
-  name: 'title'
+  name: 'leasebraryTitle'
 }
 
 </script>

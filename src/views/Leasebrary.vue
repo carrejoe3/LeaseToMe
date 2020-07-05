@@ -2,6 +2,7 @@
   <v-main>
    <MainNavbar />
    <leasebraryTitle />
+   <firstRow />
    <Footer />
    <FooterBar />
   </v-main>
@@ -11,7 +12,8 @@
 
 // @ is an alias to /src
 import MainNavbar from '@/components/navbars/MainNavbar'
-import leasebraryTitle from '@/components/leasebrary/title'
+import leasebraryTitle from '@/components/leasebrary/leasebraryTitle'
+import firstRow from '@/components/leasebrary/firstRow'
 import Footer from '@/components/footer/Footer'
 import FooterBar from '@/components/footer/FooterBar'
 
@@ -20,6 +22,7 @@ export default {
   components: {
     MainNavbar,
     leasebraryTitle,
+    firstRow,
     Footer,
     FooterBar
   }
