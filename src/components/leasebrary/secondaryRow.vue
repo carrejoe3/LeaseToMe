@@ -8,7 +8,7 @@
           <v-card-title class="cardTitle">{{ card.title }}</v-card-title>
           <v-card-text style="flex-grow: 1;">{{ card.body }}</v-card-text>
           <v-card-actions>
-            <v-btn text>Read More</v-btn>
+            <v-btn text color="darkGreen">Read More</v-btn>
           </v-card-actions>
         </v-card>
       </v-slide-item>
@@ -59,6 +59,7 @@ export default {
 
   .cardTitle {
     word-break: normal;
+    color: $lightGreen;
   }
 }
 </style>
