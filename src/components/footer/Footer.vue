@@ -109,10 +109,6 @@ export default {
         {
           title: 'Find Brokers',
           navTo: 'About'
-        },
-        {
-          title: 'Lease-brary',
-          navTo: 'About'
         }
       ],
       landlords: [
@@ -182,7 +178,7 @@ export default {
         },
         {
           title: 'Lease-brary',
-          navTo: 'About'
+          navTo: 'Leasebrary'
         }
       ]
     }

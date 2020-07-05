@@ -12,32 +12,37 @@ const routes = [
   {
     path: '/',
     name: 'Login',
-    component: () => import(/* webpackChunkName: "home" */ '../views/Login')
+    component: () => import(/* webpackChunkName: "login" */ '../views/Login')
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import(/* webpackChunkName: "home" */ '../views/About')
+    component: () => import(/* webpackChunkName: "about" */ '../views/About')
   },
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: () => import(/* webpackChunkName: "home" */ '../views/Dashboard')
+    component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard')
   },
   {
     path: '/propertyListing',
     name: 'PropertyListing',
-    component: () => import(/* webpackChunkName: "home" */ '../views/PropertyListing')
+    component: () => import(/* webpackChunkName: "propertyListing" */ '../views/PropertyListing')
   },
   {
     path: '/myProperties',
     name: 'MyProperties',
-    component: () => import(/* webpackChunkName: "home" */ '../views/MyProperties')
+    component: () => import(/* webpackChunkName: "myProperties" */ '../views/MyProperties')
   },
   {
     path: '/findSpaces',
     name: 'FindSpaces',
-    component: () => import(/* webpackChunkName: "home" */ '../views/FindSpaces')
+    component: () => import(/* webpackChunkName: "findSpaces" */ '../views/FindSpaces')
+  },
+  {
+    path: '/leasebrary',
+    name: 'Leasebrary',
+    component: () => import(/* webpackChunkName: "leasebrary" */ '../views/Leasebrary')
   }
 ]
 
