@@ -12,6 +12,8 @@
       </v-row>
       <propertyCards />
     </v-container>
+    <Footer />
+    <FooterBar />
   </v-main>
 </template>
 
@@ -24,6 +26,8 @@ import idealLocationFilter from '@/components/properties/idealLocationFilter'
 import sortDropdown from '@/components/properties/sortDropdown'
 import propertyCards from '@/components/properties/propertyCards'
 import propertyFilterPopup from '@/components/properties/propertyFilterPopup'
+import Footer from '@/components/footer/Footer'
+import FooterBar from '@/components/footer/FooterBar'
 
 export default {
   name: 'findSpaces',
@@ -33,7 +37,9 @@ export default {
     idealLocationFilter,
     sortDropdown,
     propertyCards,
-    propertyFilterPopup
+    propertyFilterPopup,
+    Footer,
+    FooterBar
   }
 }
 
